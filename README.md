@@ -69,13 +69,21 @@ grounded in the engine's score and rules rather than vibes.
 
 ## Why it's fast (and accurate)
 
-- **All network I/O happens once, at startup.** LOLBAS, GTFOBins, SigmaHQ and
-  MITRE ATT&CK keywords are fetched, parsed and cached into memory before the
-  first scan. The CSV scan itself is 100% local — ~3 ms for 220 rows — so it never
-  incurs the per-second time penalty.
+- **All network I/O happens once, at startup.** LOLBAS, GTFOBins, SigmaHQ and the
+  MITRE ATT&CK Enterprise STIX bundle are fetched, parsed and cached into memory
+  before the first scan. The CSV scan itself is 100% local — ~3 ms for 220 rows —
+  so it never incurs the per-second time penalty.
 - **Always boots.** Each source uses a `live → ./cache → ./data/fallback` ladder.
   Even with no network at all, the app starts from the committed snapshot. The
   header badge shows 🟢 Live / 🟡 Cached / 🟠 Fallback so you always know.
+- **MITRE is live, not hardcoded.** The ~50 MB ATT&CK Enterprise STIX bundle is
+  distilled at boot into a compact `technique-ID → {name, tactic, url}` catalog.
+  ATT&CK ships techniques and tactics but *not* command-line signatures, so the
+  one curated piece is `sources.MITRE_INDICATORS` — a substring → technique-ID map
+  — whose tactic/name labels are resolved from the **live** catalog. That makes
+  the labels self-correcting: ATT&CK v19 split the old *Defense Evasion* tactic
+  into *Stealth* + *Defense Impairment*, and the app reflects that automatically
+  with no code change, because only the fetched catalog moved — never the map.
 
 ## Scoring
 
@@ -86,8 +94,8 @@ Risk_Score = Heuristics + Dynamic_Pattern − False_Positive_Penalty
 - **Heuristics:** command length > 150 (+10), heavy escaping (+15), high
   special-character density (+15).
 - **Dynamic pattern:** LOLBAS/GTFOBins dangerous-usage match (+35), Sigma
-  high-risk token (+40), MITRE attack-phase keyword (+25), base64 payload that
-  decodes to malicious content (+25), Trojan-Source Unicode concealment (+20).
+  high-risk token (+40), MITRE ATT&CK technique indicator (+25), base64 payload
+  that decodes to malicious content (+25), Trojan-Source Unicode concealment (+20).
 - **False-positive penalty (hardened):** standard system path with no obfuscation
   (−20), documented benign-admin usage (−35) — **never applied when a strong
   malicious indicator is present**, so a benign token can't be used to suppress a
@@ -146,7 +154,7 @@ python generate_sample.py    # writes sample.csv
 | File | Role |
 |------|------|
 | `app.py` | Flask app — startup hook, `/`, `/scan`, `/health` |
-| `sources.py` | One-time fetch + parse of LOLBAS / GTFOBins / Sigma; cache + fallback |
+| `sources.py` | One-time fetch + parse of LOLBAS / GTFOBins / Sigma / MITRE ATT&CK; cache + fallback |
 | `scoring.py` | Pure-local risk-score engine (no I/O) |
 | `explain.py` | Builds the clean per-command explanation text |
 | `templates/`, `static/` | Cyberpunk SOC UI (Tailwind + custom CSS/JS) |

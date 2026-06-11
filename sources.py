@@ -35,6 +35,10 @@ FALLBACK_DIR = os.path.join(HERE, "data", "fallback")
 LOLBAS_URL = "https://lolbas-project.github.io/api/lolbas.json"
 GTFOBINS_TARBALL = "https://github.com/GTFOBins/GTFOBins.github.io/archive/refs/heads/master.tar.gz"
 SIGMA_TARBALL = "https://github.com/SigmaHQ/sigma/archive/refs/heads/master.tar.gz"
+# Official MITRE ATT&CK STIX 2.1 distribution (the deprecated mitre/cti repo
+# mirrors the same content). The version-less convenience file always points at
+# the latest Enterprise release.
+MITRE_ATTACK_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json"
 
 # (connect, read) timeout — startup only, never on the hot path.
 #  - connect = 2s : a dead/blackholed network fails fast and falls back to the
@@ -43,59 +47,70 @@ SIGMA_TARBALL = "https://github.com/SigmaHQ/sigma/archive/refs/heads/master.tar.
 #                   timeout=2 would abort that download mid-read on a *healthy*
 #                   network and needlessly drop to fallback.
 HTTP_TIMEOUT = (2, 30)
+# The ATT&CK Enterprise bundle is ~50 MB, so it gets a longer read window than
+# the other sources; a slow venue link shouldn't needlessly drop us to fallback.
+MITRE_TIMEOUT = (3, 90)
 HEADERS = {"User-Agent": "BlueTeam-Triage/1.0"}
 
 
 # --------------------------------------------------------------------------- #
-# MITRE ATT&CK — static keyword map (substring -> tactic).
-# The full STIX bundle is ~30 MB and unnecessary: we only need attack-phase
-# keywords to (a) score +25 and (b) explain *which* phase the command belongs to.
+# MITRE ATT&CK — curated command-line indicator -> ATT&CK technique ID.
+#
+# ATT&CK ships techniques, tactics and descriptions, but NOT command-line
+# signatures, so the mapping from an observable string (e.g. "-encodedcommand")
+# to a technique is necessarily hand-curated. We map each indicator to a stable
+# *technique ID* and resolve its human-readable name + tactic from the LIVE
+# ATT&CK catalog at compile time (see scoring.compile_intel). That keeps the
+# labels correct even when ATT&CK renames a tactic (v19 split the old "Defense
+# Evasion" into "Stealth" + "Defense Impairment") — only the catalog changes,
+# never this map.
 # --------------------------------------------------------------------------- #
-MITRE_KEYWORDS = {
-    # --- Defense Evasion ---
-    "-encodedcommand": "Defense Evasion",
-    "-enc ": "Defense Evasion",
-    "frombase64string": "Defense Evasion",
-    "-w hidden": "Defense Evasion",
-    "-windowstyle hidden": "Defense Evasion",
-    "-nop": "Defense Evasion",
-    "-noprofile": "Defense Evasion",
-    "executionpolicy bypass": "Defense Evasion",
-    "-ep bypass": "Defense Evasion",
-    "set-mppreference": "Defense Evasion",
-    "disablerealtimemonitoring": "Defense Evasion",
-    "add-mppreference": "Defense Evasion",
-    "wevtutil cl": "Defense Evasion",
-    "clear-eventlog": "Defense Evasion",
+MITRE_INDICATORS = {
+    # --- Obfuscation / hidden execution ---
+    "-encodedcommand": "T1027",            # Obfuscated Files or Information
+    "-enc ": "T1027",
+    "frombase64string": "T1140",           # Deobfuscate/Decode Files or Information
+    "-w hidden": "T1564.003",              # Hide Artifacts: Hidden Window
+    "-windowstyle hidden": "T1564.003",
+    "-nop": "T1059.001",                   # Command and Scripting Interpreter: PowerShell
+    "-noprofile": "T1059.001",
+    "executionpolicy bypass": "T1059.001",
+    "-ep bypass": "T1059.001",
+    # --- Impair defenses (v19 "Defense Impairment" tactic) ---
+    "set-mppreference": "T1685",           # Disable or Modify Tools
+    "disablerealtimemonitoring": "T1685",
+    "add-mppreference": "T1685",
+    "wevtutil cl": "T1685.005",            # Disable or Modify Tools: Clear Windows Event Logs
+    "clear-eventlog": "T1685.005",
     # --- Impact (destruction / ransomware) ---
-    "vssadmin delete": "Impact",
-    "wbadmin delete": "Impact",
-    "bcdedit": "Impact",
-    "cipher /w": "Impact",
-    "fsutil usn deletejournal": "Impact",
+    "vssadmin delete": "T1490",            # Inhibit System Recovery
+    "wbadmin delete": "T1490",
+    "bcdedit": "T1490",
+    "cipher /w": "T1485",                   # Data Destruction
+    "fsutil usn deletejournal": "T1070",   # Indicator Removal
     # --- Persistence ---
-    "schtasks /create": "Persistence",
-    "reg add": "Persistence",
-    "currentversion\\run": "Persistence",
-    "new-service": "Persistence",
-    "sc create": "Persistence",
-    "wmic /node": "Persistence",
+    "schtasks /create": "T1053.005",       # Scheduled Task/Job: Scheduled Task
+    "reg add": "T1547.001",                # Boot/Logon Autostart: Registry Run Keys
+    "currentversion\\run": "T1547.001",
+    "new-service": "T1543.003",            # Create or Modify System Process: Windows Service
+    "sc create": "T1543.003",
+    "wmic /node": "T1047",                 # Windows Management Instrumentation
     # --- Credential Access ---
-    "mimikatz": "Credential Access",
-    "sekurlsa": "Credential Access",
-    "comsvcs.dll": "Credential Access",
-    "lsass": "Credential Access",
-    "ntds.dit": "Credential Access",
+    "mimikatz": "T1003",                   # OS Credential Dumping
+    "sekurlsa": "T1003.001",               # OS Credential Dumping: LSASS Memory
+    "comsvcs.dll": "T1003.001",
+    "lsass": "T1003.001",
+    "ntds.dit": "T1003.003",               # OS Credential Dumping: NTDS
     # --- Discovery ---
-    "whoami /all": "Discovery",
-    "net group \"domain admins\"": "Discovery",
-    # --- Command & Control ---
-    "downloadstring": "Command and Control",
-    "downloadfile": "Command and Control",
-    "invoke-webrequest": "Command and Control",
-    "/dev/tcp/": "Command and Control",
-    "nc -e": "Command and Control",
-    "ncat -e": "Command and Control",
+    "whoami /all": "T1033",                # System Owner/User Discovery
+    "net group \"domain admins\"": "T1069.002",  # Permission Groups Discovery: Domain Groups
+    # --- Command & Control / ingress ---
+    "downloadstring": "T1105",             # Ingress Tool Transfer
+    "downloadfile": "T1105",
+    "invoke-webrequest": "T1105",
+    "/dev/tcp/": "T1059.004",              # Command and Scripting Interpreter: Unix Shell
+    "nc -e": "T1059.004",
+    "ncat -e": "T1059.004",
 }
 
 # Lone generic words that show up as Sigma CommandLine tokens but match tons of
@@ -383,6 +398,66 @@ def _walk_detection(node, binaries, tokens):
 
 
 # --------------------------------------------------------------------------- #
+# MITRE ATT&CK — the official STIX 2.1 Enterprise bundle (~50 MB). We download it
+# once at boot and distil it to a compact technique catalog:
+#     { "T1027": {"name": "Obfuscated Files or Information",
+#                 "tactics": ["Stealth"],
+#                 "url": "https://attack.mitre.org/techniques/T1027"} }
+# Only the catalog is cached/persisted, not the 50 MB bundle. The curated
+# MITRE_INDICATORS map (substring -> technique ID) is joined against this catalog
+# in scoring.compile_intel, so tactic names always reflect the live release.
+# --------------------------------------------------------------------------- #
+def fetch_mitre():
+    resp = requests.get(MITRE_ATTACK_URL, timeout=MITRE_TIMEOUT, headers=HEADERS)
+    resp.raise_for_status()
+    return parse_mitre_bundle(resp.json())
+
+
+def parse_mitre_bundle(raw):
+    """STIX bundle -> {technique_id: {name, tactics, url}} (current techniques only)."""
+    objects = raw.get("objects", []) if isinstance(raw, dict) else []
+
+    # Pass 1: tactic shortname -> display name (e.g. "command-and-control" ->
+    # "Command and Control"), taken straight from the bundle's x-mitre-tactic
+    # objects so the casing matches ATT&CK exactly.
+    tactic_names = {}
+    for obj in objects:
+        if obj.get("type") == "x-mitre-tactic":
+            shortname = obj.get("x_mitre_shortname")
+            if shortname:
+                tactic_names[shortname] = obj.get("name") or _tactic_title(shortname)
+
+    # Pass 2: attack-pattern (technique) objects -> compact records.
+    techniques = {}
+    for obj in objects:
+        if obj.get("type") != "attack-pattern":
+            continue
+        if obj.get("revoked") or obj.get("x_mitre_deprecated"):
+            continue
+        ext = next((r for r in obj.get("external_references") or []
+                    if r.get("source_name") == "mitre-attack" and r.get("external_id")), None)
+        if not ext:
+            continue
+        tid = ext["external_id"]
+        tactics = [
+            tactic_names.get(kc.get("phase_name"), _tactic_title(kc.get("phase_name", "")))
+            for kc in obj.get("kill_chain_phases") or []
+            if kc.get("kill_chain_name") == "mitre-attack" and kc.get("phase_name")
+        ]
+        techniques[tid] = {
+            "name": obj.get("name") or tid,
+            "tactics": tactics,
+            "url": ext.get("url") or f"https://attack.mitre.org/techniques/{tid.replace('.', '/')}",
+        }
+    return techniques
+
+
+def _tactic_title(phase_name):
+    """Fallback humaniser for a kill-chain phase_name ('defense-impairment')."""
+    return (phase_name or "").replace("-", " ").replace("_", " ").title()
+
+
+# --------------------------------------------------------------------------- #
 # Public entrypoint
 # --------------------------------------------------------------------------- #
 def load_intel(logger=print):
@@ -391,26 +466,30 @@ def load_intel(logger=print):
     lolbas, s1 = _load_source("lolbas", fetch_lolbas, logger)
     gtfobins, s2 = _load_source("gtfobins", fetch_gtfobins, logger)
     sigma, s3 = _load_source("sigma", fetch_sigma, logger)
+    mitre, s4 = _load_source("mitre", fetch_mitre, logger)
 
-    statuses = {"lolbas": s1, "gtfobins": s2, "sigma": s3}
+    statuses = {"lolbas": s1, "gtfobins": s2, "sigma": s3, "mitre": s4}
     overall = _overall_status(statuses.values())
 
     intel = {
         "lolbins": lolbas,
         "gtfobins": gtfobins,
         "sigma": sigma,
-        "mitre_keywords": MITRE_KEYWORDS,
+        "mitre_techniques": mitre,          # live ATT&CK technique catalog
+        "mitre_indicators": MITRE_INDICATORS,  # curated substring -> technique ID
         "statuses": statuses,
         "status": overall,
         "counts": {
             "lolbins": len(lolbas),
             "gtfobins": len(gtfobins),
             "sigma_rules": len(sigma),
-            "mitre_keywords": len(MITRE_KEYWORDS),
+            "mitre_techniques": len(mitre),
+            "mitre_indicators": len(MITRE_INDICATORS),
         },
     }
     logger(f"[intel] ready — status={overall} "
-           f"(lolbins={len(lolbas)}, gtfobins={len(gtfobins)}, sigma={len(sigma)})")
+           f"(lolbins={len(lolbas)}, gtfobins={len(gtfobins)}, sigma={len(sigma)}, "
+           f"mitre={len(mitre)})")
     return intel
 
 

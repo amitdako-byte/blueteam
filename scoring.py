@@ -27,7 +27,7 @@ WEIGHTS = {
     # Dynamic pattern matches
     "lolbin_match": 35,       # LOLBAS / GTFOBins dangerous execution pattern
     "sigma_token": 40,        # high-risk token from compiled Sigma ruleset
-    "mitre_keyword": 25,      # explicit attack-phase keyword
+    "mitre_keyword": 25,      # command indicator mapped to a live ATT&CK technique
     "encoded_payload": 25,    # a base64 blob that decodes to malicious content
     "trojan_source": 20,      # bidi / zero-width Unicode concealment (Trojan Source)
     # False-positive penalties (subtracted)
@@ -199,8 +199,25 @@ def compile_intel(intel):
 
     intel["_bin_index"] = bin_index
     intel["_sigma_index"] = sigma_index
-    intel["_mitre"] = list(intel.get("mitre_keywords", {}).items())
+    intel["_mitre"] = _compile_mitre(intel)
     return intel
+
+
+def _compile_mitre(intel):
+    """Join curated indicators (substring -> technique ID) with the live ATT&CK
+    catalog into [(substring, {id, name, tactic})]. Tactic/name come from the
+    live release, so a tactic rename upstream never desyncs our labels."""
+    techniques = intel.get("mitre_techniques", {})
+    compiled = []
+    for substring, tid in intel.get("mitre_indicators", {}).items():
+        tech = techniques.get(tid)
+        tactics = tech.get("tactics") if tech else None
+        compiled.append((substring, {
+            "id": tid,
+            "name": tech.get("name") if tech else None,
+            "tactic": tactics[0] if tactics else None,
+        }))
+    return compiled
 
 
 def _index_binary(index, name, rec):
@@ -301,12 +318,15 @@ def score_row(process_name, command_line, intel):
             triggers.append(_t("sigma", WEIGHTS["sigma_token"], detail, tactic=tactic))
             break  # one Sigma hit is enough; avoid stacking near-duplicate rules
 
-    for kw, tactic in intel["_mitre"]:
+    for kw, tech in intel["_mitre"]:
         if kw in cl_match:
             score += WEIGHTS["mitre_keyword"]
-            triggers.append(_t("mitre", WEIGHTS["mitre_keyword"],
-                               f"it performs activity associated with the {tactic} phase",
-                               tactic=tactic))
+            if tech.get("name"):
+                detail = f"it maps to the ATT&CK technique {tech['name']} ({tech['id']})"
+            else:
+                detail = f"it matches a known ATT&CK attack indicator ({tech['id']})"
+            triggers.append(_t("mitre", WEIGHTS["mitre_keyword"], detail,
+                               tactic=tech.get("tactic")))
             break
 
     # Encoded payload: a base64 blob that decodes to genuinely malicious content.

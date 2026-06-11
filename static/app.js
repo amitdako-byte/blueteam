@@ -181,7 +181,7 @@
 
   function tagLabel(type) {
     const map = {
-      lolbin: "LOLBIN/GTFO", sigma: "SIGMA RULE", mitre: "MITRE PHASE",
+      lolbin: "LOLBIN/GTFO", sigma: "SIGMA RULE", mitre: "MITRE ATT&CK",
       heuristic_length: "LENGTH", heuristic_escape: "ESCAPING",
       heuristic_density: "OBFUSCATION", fp_path: "SYSTEM PATH", fp_benign: "BENIGN USE",
     };
