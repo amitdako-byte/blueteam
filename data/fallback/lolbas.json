@@ -1,0 +1,3872 @@
+{
+"addinutil.exe": {
+"name": "AddinUtil.exe",
+"os": "windows",
+"tokens": [
+"-addinroot"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution of malicious serialized payload"
+],
+"mitre": [
+"T1218"
+]
+},
+"appinstaller.exe": {
+"name": "AppInstaller.exe",
+"os": "windows",
+"tokens": [
+"-appinstaller"
+],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download file from Internet"
+],
+"mitre": [
+"T1105"
+]
+},
+"aspnet_compiler.exe": {
+"name": "Aspnet_Compiler.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass"
+],
+"usecases": [
+"Execute proxied payload with Microsoft signed binary to bypass application control solutions"
+],
+"mitre": [
+"T1127"
+]
+},
+"at.exe": {
+"name": "At.exe",
+"os": "windows",
+"tokens": [
+"/every",
+"/interactive"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Create a recurring task, to eg. to keep reverse shell session(s) alive"
+],
+"mitre": [
+"T1053.002"
+]
+},
+"atbroker.exe": {
+"name": "Atbroker.exe",
+"os": "windows",
+"tokens": [
+"/start"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes code defined in registry for a new AT. Modifications must be made to the system registry to either register or modify an existing Assistive Technology (AT) service entry."
+],
+"mitre": [
+"T1218"
+]
+},
+"bash.exe": {
+"name": "Bash.exe",
+"os": "windows",
+"tokens": [
+"-connect"
+],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Performs execution of specified file, can be used as a defensive evasion.",
+"Performs execution of specified file, can be used as a defensive evasion.",
+"Performs execution of specified file, can be used as a defensive evasion."
+],
+"mitre": [
+"T1202",
+"T1218"
+]
+},
+"bitsadmin.exe": {
+"name": "Bitsadmin.exe",
+"os": "windows",
+"tokens": [
+"/addfile",
+"/autoruns",
+"/complete",
+"/create",
+"/live",
+"/reset",
+"/resume",
+"/setnotifycmdline"
+],
+"categories": [
+"ADS",
+"Copy",
+"Download",
+"Execute"
+],
+"usecases": [
+"Performs execution of specified file in the alternate data stream, can be used as a defensive evasion or persistence technique.",
+"Download file from Internet",
+"Copy file"
+],
+"mitre": [
+"T1105",
+"T1218",
+"T1564.004"
+]
+},
+"certoc.exe": {
+"name": "CertOC.exe",
+"os": "windows",
+"tokens": [
+"-getcacaps",
+"-loaddll"
+],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"Execute code within DLL file",
+"Download scripts, webshells etc."
+],
+"mitre": [
+"T1105",
+"T1218"
+]
+},
+"certreq.exe": {
+"name": "CertReq.exe",
+"os": "windows",
+"tokens": [
+"-config",
+"-post"
+],
+"categories": [
+"Download",
+"Upload"
+],
+"usecases": [
+"Download file from Internet",
+"Upload"
+],
+"mitre": [
+"T1105"
+]
+},
+"certutil.exe": {
+"name": "Certutil.exe",
+"os": "windows",
+"tokens": [
+"-decode",
+"-decodehex",
+"-encode",
+"-urlcache",
+"-verifyctl"
+],
+"categories": [
+"ADS",
+"Decode",
+"Download",
+"Encode"
+],
+"usecases": [
+"Download file from Internet",
+"Download file from Internet",
+"Download file from Internet and save it in an NTFS Alternate Data Stream"
+],
+"mitre": [
+"T1027.013",
+"T1105",
+"T1140",
+"T1564.004"
+]
+},
+"change.exe": {
+"name": "Change.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute an arbitrary executable via trusted system executable."
+],
+"mitre": [
+"T1218"
+]
+},
+"cipher.exe": {
+"name": "Cipher.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Tamper"
+],
+"usecases": [
+"Can be used to forensically erase a file.",
+"Can be used to impair defences by e.g. encrypting a critical EDR solution file."
+],
+"mitre": [
+"T1485",
+"T1562"
+]
+},
+"cmd.exe": {
+"name": "Cmd.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Download",
+"Upload"
+],
+"usecases": [
+"Can be used to evade defensive countermeasures or to hide as a persistence mechanism",
+"Can be used to evade defensive countermeasures or to hide as a persistence mechanism",
+"Download/copy a file from a WebDAV server"
+],
+"mitre": [
+"T1048.003",
+"T1059.003",
+"T1105",
+"T1564.004"
+]
+},
+"cmdkey.exe": {
+"name": "Cmdkey.exe",
+"os": "windows",
+"tokens": [
+"/list"
+],
+"categories": [
+"Credentials"
+],
+"usecases": [
+"Get credential information from host"
+],
+"mitre": [
+"T1078"
+]
+},
+"cmdl32.exe": {
+"name": "cmdl32.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download file from Internet"
+],
+"mitre": [
+"T1105"
+]
+},
+"cmstp.exe": {
+"name": "Cmstp.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Execute code hidden within an inf file. Download and run scriptlets from internet.",
+"Execute code hidden within an inf file. Execute code directly from Internet.",
+"Proxy execution of a malicious DLL via registry modification."
+],
+"mitre": [
+"T1218.003"
+]
+},
+"colorcpl.exe": {
+"name": "Colorcpl.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Copy"
+],
+"usecases": [
+"Copies file(s) to a subfolder of a generally trusted folder (c:\\Windows\\System32), which can be used to hide files or make them blend into the environment."
+],
+"mitre": [
+"T1036.005"
+]
+},
+"computerdefaults.exe": {
+"name": "ComputerDefaults.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"UAC Bypass"
+],
+"usecases": [
+"Execute a binary or script as a high-integrity process without a UAC prompt."
+],
+"mitre": [
+"T1548.002"
+]
+},
+"configsecuritypolicy.exe": {
+"name": "ConfigSecurityPolicy.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download",
+"Upload"
+],
+"usecases": [
+"Upload file",
+"Downloads payload from remote server"
+],
+"mitre": [
+"T1105",
+"T1567"
+]
+},
+"conhost.exe": {
+"name": "Conhost.exe",
+"os": "windows",
+"tokens": [
+"-headless"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Use conhost.exe as a proxy binary to evade defensive counter-measures",
+"Specify --headless parameter to hide child process window (if applicable)"
+],
+"mitre": [
+"T1202"
+]
+},
+"control.exe": {
+"name": "Control.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Execute"
+],
+"usecases": [
+"Can be used to evade defensive countermeasures or to hide as a persistence mechanism",
+"Use to execute code and bypass application whitelisting"
+],
+"mitre": [
+"T1218.002"
+]
+},
+"csc.exe": {
+"name": "Csc.exe",
+"os": "windows",
+"tokens": [
+"-target"
+],
+"categories": [
+"Compile"
+],
+"usecases": [
+"Compile attacker code on system. Bypass defensive counter measures.",
+"Compile attacker code on system. Bypass defensive counter measures."
+],
+"mitre": [
+"T1127"
+]
+},
+"cscript.exe": {
+"name": "Cscript.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS"
+],
+"usecases": [
+"Can be used to evade defensive countermeasures or to hide as a persistence mechanism"
+],
+"mitre": [
+"T1564.004"
+]
+},
+"customshellhost.exe": {
+"name": "CustomShellHost.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Can be used to evade defensive counter-measures"
+],
+"mitre": [
+"T1218"
+]
+},
+"datasvcutil.exe": {
+"name": "DataSvcUtil.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Upload"
+],
+"usecases": [
+"Upload file"
+],
+"mitre": [
+"T1567"
+]
+},
+"desktopimgdownldr.exe": {
+"name": "Desktopimgdownldr.exe",
+"os": "windows",
+"tokens": [
+"/eventname",
+"/lockscreenurl"
+],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download arbitrary files from a web server"
+],
+"mitre": [
+"T1105"
+]
+},
+"devicecredentialdeployment.exe": {
+"name": "DeviceCredentialDeployment.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Conceal"
+],
+"usecases": [
+"Can be used to stealthily run a console application (e.g. cmd.exe) in the background"
+],
+"mitre": [
+"T1564"
+]
+},
+"dfsvc.exe": {
+"name": "Dfsvc.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass"
+],
+"usecases": [
+"Use binary to bypass Application whitelisting"
+],
+"mitre": [
+"T1127.002"
+]
+},
+"diantz.exe": {
+"name": "Diantz.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Download",
+"Execute"
+],
+"usecases": [
+"Hide data compressed into an Alternate Data Stream.",
+"Download and compress into a cab file.",
+"Bypass command-line based detections"
+],
+"mitre": [
+"T1036",
+"T1105",
+"T1564.004"
+]
+},
+"diskshadow.exe": {
+"name": "Diskshadow.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Dump",
+"Execute"
+],
+"usecases": [
+"Use diskshadow to exfiltrate data from VSS such as NTDS.dit",
+"Use diskshadow to bypass defensive counter measures"
+],
+"mitre": [
+"T1003.003",
+"T1202"
+]
+},
+"dnscmd.exe": {
+"name": "Dnscmd.exe",
+"os": "windows",
+"tokens": [
+"/config",
+"/serverlevelplugindll"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Remotely inject dll to dns server"
+],
+"mitre": [
+"T1543.003"
+]
+},
+"esentutl.exe": {
+"name": "Esentutl.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Copy",
+"Download"
+],
+"usecases": [
+"Copies files from A to B",
+"Copy file and hide it in an alternate data stream as a defensive counter measure",
+"Extract hidden file within alternate data streams"
+],
+"mitre": [
+"T1003.003",
+"T1105",
+"T1564.004"
+]
+},
+"eudcedit.exe": {
+"name": "Eudcedit.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"UAC Bypass"
+],
+"usecases": [
+"Execute a binary or script as a high-integrity process without a UAC prompt."
+],
+"mitre": [
+"T1548.002"
+]
+},
+"eventvwr.exe": {
+"name": "Eventvwr.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"UAC Bypass"
+],
+"usecases": [
+"Execute a binary or script as a high-integrity process without a UAC prompt.",
+"Execute a command to bypass security restrictions that limit the use of command-line interpreters."
+],
+"mitre": [
+"T1548.002"
+]
+},
+"expand.exe": {
+"name": "Expand.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Copy",
+"Download"
+],
+"usecases": [
+"Use to copies the source file to the destination file",
+"Copies files from A to B",
+"Copies files from A to B"
+],
+"mitre": [
+"T1105",
+"T1564.004"
+]
+},
+"explorer.exe": {
+"name": "Explorer.exe",
+"os": "windows",
+"tokens": [
+"/root"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Performs execution of specified file with explorer parent process breaking the process tree, can be used for defense evasion.",
+"Performs execution of specified file with explorer parent process breaking the process tree, can be used for defense evasion."
+],
+"mitre": [
+"T1202"
+]
+},
+"extexport.exe": {
+"name": "Extexport.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute dll file"
+],
+"mitre": [
+"T1218"
+]
+},
+"extrac32.exe": {
+"name": "Extrac32.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Copy",
+"Download"
+],
+"usecases": [
+"Extract data from cab file and hide it in an alternate data stream.",
+"Extract data from cab file and hide it in an alternate data stream.",
+"Download file from UNC/WEBDav"
+],
+"mitre": [
+"T1105",
+"T1564.004"
+]
+},
+"findstr.exe": {
+"name": "Findstr.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Credentials",
+"Download"
+],
+"usecases": [
+"Add a file to an alternate data stream to hide from defensive counter measures",
+"Add a file to an alternate data stream from a webdav server to hide from defensive counter measures",
+"Find credentials stored in cpassword attrbute"
+],
+"mitre": [
+"T1105",
+"T1552.001",
+"T1564.004"
+]
+},
+"finger.exe": {
+"name": "Finger.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download malicious payload"
+],
+"mitre": [
+"T1105"
+]
+},
+"fltmc.exe": {
+"name": "fltMC.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Tamper"
+],
+"usecases": [
+"Defense evasion"
+],
+"mitre": [
+"T1562.001"
+]
+},
+"forfiles.exe": {
+"name": "Forfiles.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Execute"
+],
+"usecases": [
+"Use forfiles to start a new process to evade defensive counter measures",
+"Use forfiles to start a new process from a binary hidden in an alternate data stream"
+],
+"mitre": [
+"T1202",
+"T1564.004"
+]
+},
+"fsutil.exe": {
+"name": "Fsutil.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute",
+"Tamper"
+],
+"usecases": [
+"Can be used to forensically erase a file",
+"Can be used to hide file creation activity",
+"Spawn a pre-planted executable from fsutil.exe."
+],
+"mitre": [
+"T1218",
+"T1485"
+]
+},
+"ftp.exe": {
+"name": "Ftp.exe",
+"os": "windows",
+"tokens": [
+"/payload"
+],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"Spawn new process using ftp.exe. Ftp.exe runs cmd /C YourCommand",
+"Spawn new process using ftp.exe. Ftp.exe downloads the binary."
+],
+"mitre": [
+"T1105",
+"T1202"
+]
+},
+"gpscript.exe": {
+"name": "Gpscript.exe",
+"os": "windows",
+"tokens": [
+"/logon",
+"/startup"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Add local group policy logon script to execute file and hide from defensive counter measures",
+"Add local group policy logon script to execute file and hide from defensive counter measures"
+],
+"mitre": [
+"T1218"
+]
+},
+"hh.exe": {
+"name": "Hh.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"Download files from url",
+"Execute process with HH.exe",
+"Execute commands with HH.exe"
+],
+"mitre": [
+"T1105",
+"T1218.001"
+]
+},
+"imewdbld.exe": {
+"name": "IMEWDBLD.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download file from Internet"
+],
+"mitre": [
+"T1105"
+]
+},
+"ie4uinit.exe": {
+"name": "Ie4uinit.exe",
+"os": "windows",
+"tokens": [
+"-basesettings"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Get code execution by copy files to another location"
+],
+"mitre": [
+"T1218"
+]
+},
+"iediagcmd.exe": {
+"name": "iediagcmd.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Spawn a pre-planted executable from iediagcmd.exe."
+],
+"mitre": [
+"T1218"
+]
+},
+"ieexec.exe": {
+"name": "Ieexec.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"Download and run attacker code from remote location",
+"Download and run attacker code from remote location"
+],
+"mitre": [
+"T1105",
+"T1218"
+]
+},
+"ilasm.exe": {
+"name": "Ilasm.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Compile"
+],
+"usecases": [
+"Compile attacker code on system. Bypass defensive counter measures.",
+"A description of the usecase"
+],
+"mitre": [
+"T1127"
+]
+},
+"infdefaultinstall.exe": {
+"name": "Infdefaultinstall.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Code execution"
+],
+"mitre": [
+"T1218"
+]
+},
+"installutil.exe": {
+"name": "Installutil.exe",
+"os": "windows",
+"tokens": [
+"/logfile",
+"/logtoconsole"
+],
+"categories": [
+"AWL Bypass",
+"Download",
+"Execute"
+],
+"usecases": [
+"Use to execute code and bypass application whitelisting",
+"Use to execute code and bypass application whitelisting",
+"Downloads payload from remote server"
+],
+"mitre": [
+"T1105",
+"T1218.004"
+]
+},
+"iscsicpl.exe": {
+"name": "iscsicpl.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"UAC Bypass"
+],
+"usecases": [
+"Execute a custom DLL via a trusted high-integrity process without a UAC prompt.",
+"Execute a binary or script as a high-integrity process without a UAC prompt."
+],
+"mitre": [
+"T1548.002"
+]
+},
+"jsc.exe": {
+"name": "Jsc.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Compile"
+],
+"usecases": [
+"Compile attacker code on system. Bypass defensive counter measures.",
+"Compile attacker code on system. Bypass defensive counter measures."
+],
+"mitre": [
+"T1127"
+]
+},
+"ldifde.exe": {
+"name": "Ldifde.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download file from Internet"
+],
+"mitre": [
+"T1105"
+]
+},
+"makecab.exe": {
+"name": "Makecab.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Download",
+"Execute"
+],
+"usecases": [
+"Hide data compressed into an alternate data stream",
+"Hide data compressed into an alternate data stream",
+"Download file and compress into a cab file"
+],
+"mitre": [
+"T1036",
+"T1105",
+"T1564.004"
+]
+},
+"mavinject.exe": {
+"name": "Mavinject.exe",
+"os": "windows",
+"tokens": [
+"/injectrunning"
+],
+"categories": [
+"ADS",
+"Execute"
+],
+"usecases": [
+"Inject dll file into running process",
+"Inject dll file into running process"
+],
+"mitre": [
+"T1218.013",
+"T1564.004"
+]
+},
+"microsoft.workflow.compiler.exe": {
+"name": "Microsoft.Workflow.Compiler.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Compile and run code",
+"Compile and run code",
+"Compile and run code"
+],
+"mitre": [
+"T1127"
+]
+},
+"mmc.exe": {
+"name": "Mmc.exe",
+"os": "windows",
+"tokens": [
+"-embedding"
+],
+"categories": [
+"Download",
+"Execute",
+"UAC Bypass"
+],
+"usecases": [
+"Configure a snap-in to load a COM custom class (CLSID) that has been added to the registry",
+"Modify HKCU\\Environment key in Registry with COR profiler values then launch MMC to load the payload DLL.",
+"Download file from Internet"
+],
+"mitre": [
+"T1218.014"
+]
+},
+"mpcmdrun.exe": {
+"name": "MpCmdRun.exe",
+"os": "windows",
+"tokens": [
+"-downloadfile",
+"-path"
+],
+"categories": [
+"ADS",
+"Download"
+],
+"usecases": [
+"Download file",
+"Download file",
+"Hide downloaded data into an Alternate Data Stream"
+],
+"mitre": [
+"T1105",
+"T1564.004"
+]
+},
+"msbuild.exe": {
+"name": "Msbuild.exe",
+"os": "windows",
+"tokens": [
+"/logger"
+],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Compile and run code",
+"Compile and run code",
+"Execute DLL"
+],
+"mitre": [
+"T1036",
+"T1127.001"
+]
+},
+"msconfig.exe": {
+"name": "Msconfig.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Code execution using Msconfig.exe"
+],
+"mitre": [
+"T1218"
+]
+},
+"msdt.exe": {
+"name": "Msdt.exe",
+"os": "windows",
+"tokens": [
+"-path",
+"/param",
+"/skip"
+],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Execute code",
+"Execute code bypass Application whitelisting",
+"Execute code bypass Application allowlisting"
+],
+"mitre": [
+"T1202",
+"T1218"
+]
+},
+"msedge.exe": {
+"name": "Msedge.exe",
+"os": "windows",
+"tokens": [
+"-disable",
+"-dump",
+"-enable",
+"-headless",
+"-launcher",
+"-logging",
+"-sandbox"
+],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"Download file from the internet",
+"Download file from the internet",
+"Executes a process under a trusted Microsoft signed binary"
+],
+"mitre": [
+"T1105",
+"T1218.015"
+]
+},
+"mshta.exe": {
+"name": "Mshta.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Download",
+"Execute"
+],
+"usecases": [
+"Execute code",
+"Execute code",
+"Execute code"
+],
+"mitre": [
+"T1105",
+"T1218.005"
+]
+},
+"msiexec.exe": {
+"name": "Msiexec.exe",
+"os": "windows",
+"tokens": [
+"/quiet"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute custom made msi file with attack code",
+"Execute custom made msi file with attack code from remote server",
+"Execute dll files"
+],
+"mitre": [
+"T1218.007"
+]
+},
+"netsh.exe": {
+"name": "Netsh.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution of .dll"
+],
+"mitre": [
+"T1546.007"
+]
+},
+"ngen.exe": {
+"name": "Ngen.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache."
+],
+"mitre": [
+"T1105"
+]
+},
+"odbcconf.exe": {
+"name": "Odbcconf.exe",
+"os": "windows",
+"tokens": [
+"-project"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute a DLL file using technique that can evade defensive counter measures",
+"Execute dll file using technique that can evade defensive counter measures",
+"Execute dll file using technique that can evade defensive counter measures"
+],
+"mitre": [
+"T1218.008"
+]
+},
+"offlinescannershell.exe": {
+"name": "OfflineScannerShell.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Can be used to evade defensive countermeasures or to hide as a persistence mechanism"
+],
+"mitre": [
+"T1218"
+]
+},
+"onedrivestandaloneupdater.exe": {
+"name": "OneDriveStandaloneUpdater.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download a file from the Internet without executing any anomalous executables with suspicious arguments"
+],
+"mitre": [
+"T1105"
+]
+},
+"pcalua.exe": {
+"name": "Pcalua.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution of binary",
+"Proxy execution of remote dll file",
+"Execution of CPL files"
+],
+"mitre": [
+"T1202"
+]
+},
+"pcwrun.exe": {
+"name": "Pcwrun.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution of binary",
+"Proxy execution of binary"
+],
+"mitre": [
+"T1202",
+"T1218"
+]
+},
+"pktmon.exe": {
+"name": "Pktmon.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Reconnaissance"
+],
+"usecases": [
+"use this a built in network sniffer on windows 10 to capture senstive traffic",
+"Look for interesting traffic such as telent or FTP"
+],
+"mitre": [
+"T1040"
+]
+},
+"pnputil.exe": {
+"name": "Pnputil.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Add malicious driver"
+],
+"mitre": [
+"T1547"
+]
+},
+"presentationhost.exe": {
+"name": "Presentationhost.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"Execute code within XBAP files",
+"Downloads payload from remote server"
+],
+"mitre": [
+"T1105",
+"T1218"
+]
+},
+"print.exe": {
+"name": "Print.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Copy"
+],
+"usecases": [
+"Hide binary file in alternate data stream to potentially bypass defensive counter measures",
+"Copy files",
+"Copy/Download file from remote server"
+],
+"mitre": [
+"T1105",
+"T1564.004"
+]
+},
+"printbrm.exe": {
+"name": "PrintBrm.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Download"
+],
+"usecases": [
+"Exfiltrate the contents of a remote folder on a UNC share into a zip file",
+"Decompress and extract a ZIP file stored on an alternate data stream to a new folder"
+],
+"mitre": [
+"T1105",
+"T1564.004"
+]
+},
+"provlaunch.exe": {
+"name": "Provlaunch.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes arbitrary command"
+],
+"mitre": [
+"T1218"
+]
+},
+"psr.exe": {
+"name": "Psr.exe",
+"os": "windows",
+"tokens": [
+"/output",
+"/start"
+],
+"categories": [
+"Reconnaissance"
+],
+"usecases": [
+"Can be used to take screenshots of the user environment"
+],
+"mitre": [
+"T1113"
+]
+},
+"query.exe": {
+"name": "Query.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute an arbitrary executable via trusted system executable."
+],
+"mitre": [
+"T1218"
+]
+},
+"rasautou.exe": {
+"name": "Rasautou.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute DLL code"
+],
+"mitre": [
+"T1218"
+]
+},
+"rdrleakdiag.exe": {
+"name": "rdrleakdiag.exe",
+"os": "windows",
+"tokens": [
+"/fullmemdmp",
+"/snap",
+"/wait"
+],
+"categories": [
+"Dump"
+],
+"usecases": [
+"Dump process by PID.",
+"Dump LSASS process.",
+"Dump LSASS process mutliple times."
+],
+"mitre": [
+"T1003",
+"T1003.001"
+]
+},
+"reg.exe": {
+"name": "Reg.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Credentials"
+],
+"usecases": [
+"Hide/plant registry information in Alternate data stream for later use",
+"Dump credentials from the Security Account Manager (SAM)"
+],
+"mitre": [
+"T1003.002",
+"T1564.004"
+]
+},
+"regasm.exe": {
+"name": "Regasm.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Execute code and bypass Application whitelisting",
+"Execute code and bypass Application whitelisting"
+],
+"mitre": [
+"T1218.009"
+]
+},
+"regedit.exe": {
+"name": "Regedit.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS"
+],
+"usecases": [
+"Hide registry data in alternate data stream",
+"Import hidden registry data from alternate data stream"
+],
+"mitre": [
+"T1564.004"
+]
+},
+"regini.exe": {
+"name": "Regini.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS"
+],
+"usecases": [
+"Write to registry"
+],
+"mitre": [
+"T1564.004"
+]
+},
+"register-cimprovider.exe": {
+"name": "Register-cimprovider.exe",
+"os": "windows",
+"tokens": [
+"-cimprovider",
+"-path"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute code within dll file"
+],
+"mitre": [
+"T1218"
+]
+},
+"regsvcs.exe": {
+"name": "Regsvcs.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Execute dll file and bypass Application whitelisting",
+"Execute dll file and bypass Application whitelisting"
+],
+"mitre": [
+"T1218.009"
+]
+},
+"regsvr32.exe": {
+"name": "Regsvr32.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Execute code from remote scriptlet, bypass Application whitelisting",
+"Execute code from scriptlet, bypass Application whitelisting",
+"Execute code from remote scriptlet, bypass Application whitelisting"
+],
+"mitre": [
+"T1218.010"
+]
+},
+"replace.exe": {
+"name": "Replace.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Copy",
+"Download"
+],
+"usecases": [
+"Copy files",
+"Download file"
+],
+"mitre": [
+"T1105"
+]
+},
+"reset.exe": {
+"name": "Reset.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute an arbitrary executable via trusted system executable."
+],
+"mitre": [
+"T1218"
+]
+},
+"rpcping.exe": {
+"name": "Rpcping.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Credentials"
+],
+"usecases": [
+"Capture credentials on a non-standard port",
+"Relay a NTLM authentication over RPC (ncacn_ip_tcp) on a custom port"
+],
+"mitre": [
+"T1003",
+"T1187"
+]
+},
+"rundll32.exe": {
+"name": "Rundll32.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Execute"
+],
+"usecases": [
+"Execute DLL file",
+"Execute DLL from SMB share.",
+"Execute code from Internet"
+],
+"mitre": [
+"T1218.011",
+"T1564.004"
+]
+},
+"runexehelper.exe": {
+"name": "Runexehelper.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes arbitrary code"
+],
+"mitre": [
+"T1218"
+]
+},
+"runonce.exe": {
+"name": "Runonce.exe",
+"os": "windows",
+"tokens": [
+"/alternateshellstartup"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Persistence, bypassing defensive counter measures"
+],
+"mitre": [
+"T1218"
+]
+},
+"runscripthelper.exe": {
+"name": "Runscripthelper.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Bypass constrained language mode and execute Powershell script"
+],
+"mitre": [
+"T1218"
+]
+},
+"sc.exe": {
+"name": "Sc.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS"
+],
+"usecases": [
+"Execute binary file hidden inside an alternate data stream",
+"Execute binary file hidden inside an alternate data stream"
+],
+"mitre": [
+"T1564.004"
+]
+},
+"schtasks.exe": {
+"name": "Schtasks.exe",
+"os": "windows",
+"tokens": [
+"/create"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Create a recurring task to keep reverse shell session(s) alive",
+"Create a remote task to run daily relative to the the time of creation"
+],
+"mitre": [
+"T1053.005"
+]
+},
+"scriptrunner.exe": {
+"name": "Scriptrunner.exe",
+"os": "windows",
+"tokens": [
+"-appvscript"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute binary through proxy binary to evade defensive counter measures",
+"Execute binary through proxy binary from external server to evade defensive counter measures"
+],
+"mitre": [
+"T1202",
+"T1218"
+]
+},
+"setres.exe": {
+"name": "Setres.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes arbitrary code"
+],
+"mitre": [
+"T1218"
+]
+},
+"settingsynchost.exe": {
+"name": "SettingSyncHost.exe",
+"os": "windows",
+"tokens": [
+"-loadandrundiagscript",
+"-loadandrundiagscriptnocab"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Can be used to evade defensive countermeasures or to hide as a persistence mechanism",
+"Can be used to evade defensive countermeasures or to hide as a persistence mechanism. Additionally, effectively act as a -WindowStyle Hidden option (as there is in PowerShell) for any arbitrary batch file."
+],
+"mitre": [
+"T1218"
+]
+},
+"sftp.exe": {
+"name": "Sftp.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution of specified command, can be used as a defensive evasion."
+],
+"mitre": [
+"T1202"
+]
+},
+"sigverif.exe": {
+"name": "Sigverif.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute arbitrary programs through a trusted Microsoft-signed binary to bypass application whitelisting."
+],
+"mitre": [
+"T1218"
+]
+},
+"ssh.exe": {
+"name": "ssh.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute specified command, can be used for defense evasion.",
+"Performs execution of specified file, can be used as a defensive evasion."
+],
+"mitre": [
+"T1202"
+]
+},
+"stordiag.exe": {
+"name": "Stordiag.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Possible defence evasion purposes.",
+"Possible defence evasion purposes."
+],
+"mitre": [
+"T1218"
+]
+},
+"syncappvpublishingserver.exe": {
+"name": "SyncAppvPublishingServer.exe",
+"os": "windows",
+"tokens": [
+"-object"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Use SyncAppvPublishingServer as a Powershell host to execute Powershell code. Evade defensive counter measures"
+],
+"mitre": [
+"T1218"
+]
+},
+"tar.exe": {
+"name": "Tar.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS",
+"Copy"
+],
+"usecases": [
+"Can be used to evade defensive countermeasures, or to hide as part of a persistence mechanism",
+"Can be used to evade defensive countermeasures, or to hide as part of a persistence mechanism",
+"Copy files"
+],
+"mitre": [
+"T1105",
+"T1564.004"
+]
+},
+"ttdinject.exe": {
+"name": "Ttdinject.exe",
+"os": "windows",
+"tokens": [
+"/clientparams",
+"/clientscenario",
+"/ddload",
+"/launch"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Spawn process using other binary",
+"Spawn process using other binary"
+],
+"mitre": [
+"T1127"
+]
+},
+"tttracer.exe": {
+"name": "Tttracer.exe",
+"os": "windows",
+"tokens": [
+"-attach",
+"-dumpfull"
+],
+"categories": [
+"Dump",
+"Execute"
+],
+"usecases": [
+"Spawn process using other binary",
+"Dump process by PID"
+],
+"mitre": [
+"T1003",
+"T1127"
+]
+},
+"unregmp2.exe": {
+"name": "Unregmp2.exe",
+"os": "windows",
+"tokens": [
+"/hidewmp"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution of binary"
+],
+"mitre": [
+"T1202"
+]
+},
+"vbc.exe": {
+"name": "vbc.exe",
+"os": "windows",
+"tokens": [
+"-reference",
+"/target"
+],
+"categories": [
+"Compile"
+],
+"usecases": [
+"Compile attacker code on system. Bypass defensive counter measures.",
+"Compile attacker code on system. Bypass defensive counter measures."
+],
+"mitre": [
+"T1127"
+]
+},
+"verclsid.exe": {
+"name": "Verclsid.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Run a COM object created in registry to evade defensive counter measures"
+],
+"mitre": [
+"T1218.012"
+]
+},
+"wab.exe": {
+"name": "Wab.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute dll file. Bypass defensive counter measures"
+],
+"mitre": [
+"T1218"
+]
+},
+"wbadmin.exe": {
+"name": "wbadmin.exe",
+"os": "windows",
+"tokens": [
+"-backuptarget",
+"-include",
+"-items",
+"-itemtype",
+"-notrestoreacl",
+"-quiet",
+"-recoverytarget",
+"-version"
+],
+"categories": [
+"Dump"
+],
+"usecases": [
+"Snapshoting of Active Directory NTDS.dit database",
+"Dumping of Active Directory NTDS.dit database"
+],
+"mitre": [
+"T1003.003"
+]
+},
+"wbemtest.exe": {
+"name": "wbemtest.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute arbitrary commands through WMI classes"
+],
+"mitre": [
+"T1047"
+]
+},
+"winget.exe": {
+"name": "winget.exe",
+"os": "windows",
+"tokens": [
+"-accept",
+"-agreements",
+"-manifest",
+"-package"
+],
+"categories": [
+"AWL Bypass",
+"Download",
+"Execute"
+],
+"usecases": [
+"Download and execute an arbitrary file from the internet",
+"Download and install software from Microsoft Store, even if Microsoft Store App is blocked",
+"Download and install software from Microsoft Store, even if Microsoft Store App is blocked, and AppLocker is activated on the machine"
+],
+"mitre": [
+"T1105"
+]
+},
+"wlrmdr.exe": {
+"name": "Wlrmdr.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Use wlrmdr as a proxy binary to evade defensive countermeasures"
+],
+"mitre": [
+"T1202"
+]
+},
+"wmic.exe": {
+"name": "Wmic.exe",
+"os": "windows",
+"tokens": [
+"/format",
+"/node"
+],
+"categories": [
+"ADS",
+"Copy",
+"Execute"
+],
+"usecases": [
+"Execute binary file hidden in Alternate data streams to evade defensive counter measures",
+"Execute binary from wmic to evade defensive counter measures",
+"Execute binary on a remote system"
+],
+"mitre": [
+"T1105",
+"T1218",
+"T1564.004"
+]
+},
+"workfolders.exe": {
+"name": "WorkFolders.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Can be used to evade defensive countermeasures or to hide as a persistence mechanism",
+"Proxy execution of a malicious payload via App Paths registry hijacking."
+],
+"mitre": [
+"T1218"
+]
+},
+"wscript.exe": {
+"name": "Wscript.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"ADS"
+],
+"usecases": [
+"Execute hidden code to evade defensive counter measures",
+"Execute hidden code to evade defensive counter measures"
+],
+"mitre": [
+"T1564.004"
+]
+},
+"wsreset.exe": {
+"name": "Wsreset.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"UAC Bypass"
+],
+"usecases": [
+"Execute a binary or script as a high-integrity process without a UAC prompt."
+],
+"mitre": [
+"T1548.002"
+]
+},
+"wuauclt.exe": {
+"name": "wuauclt.exe",
+"os": "windows",
+"tokens": [
+"/runhandlercomserver",
+"/updatedeploymentprovider"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute dll via attach/detach methods"
+],
+"mitre": [
+"T1218"
+]
+},
+"xwizard.exe": {
+"name": "Xwizard.exe",
+"os": "windows",
+"tokens": [
+"-a7c3",
+"-f3b400ee266d",
+"/taero"
+],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"Run a com object created in registry to evade defensive counter measures",
+"Run a com object created in registry to evade defensive counter measures",
+"Download file from Internet"
+],
+"mitre": [
+"T1105",
+"T1218"
+]
+},
+"msedge_proxy.exe": {
+"name": "msedge_proxy.exe",
+"os": "windows",
+"tokens": [
+"-disable",
+"-launcher",
+"-sandbox"
+],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"Download file from the internet",
+"Executes a process under a trusted Microsoft signed binary"
+],
+"mitre": [
+"T1105",
+"T1218.015"
+]
+},
+"msedgewebview2.exe": {
+"name": "msedgewebview2.exe",
+"os": "windows",
+"tokens": [
+"-browser",
+"-disable",
+"-launcher",
+"-path",
+"-prefix",
+"-renderer",
+"-sandbox",
+"-subprocess",
+"-utility"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution of binary",
+"Proxy execution of binary",
+"Proxy execution of binary"
+],
+"mitre": [
+"T1218.015"
+]
+},
+"odbcad32.exe": {
+"name": "odbcad32.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"UAC Bypass"
+],
+"usecases": [
+"Execute a binary as a high-integrity process without a UAC prompt."
+],
+"mitre": [
+"T1548.002"
+]
+},
+"write.exe": {
+"name": "write.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute binary through legitimate proxy. This might be utilized to confuse detection solutions that rely on parent-child relationships."
+],
+"mitre": [
+"T1218"
+]
+},
+"wt.exe": {
+"name": "wt.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Use wt.exe as a proxy binary to evade defensive counter-measures"
+],
+"mitre": [
+"T1202"
+]
+},
+"advpack.dll": {
+"name": "Advpack.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Run local or remote script(let) code through INF file specification.",
+"Run local or remote script(let) code through INF file specification.",
+"Load a DLL payload."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"desk.cpl": {
+"name": "Desk.cpl",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Launch any executable payload, as long as it uses the .scr extension.",
+"Launch any executable payload, as long as it uses the .scr extension."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"dfshim.dll": {
+"name": "Dfshim.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass"
+],
+"usecases": [
+"Use binary to bypass Application whitelisting"
+],
+"mitre": [
+"T1127.002"
+]
+},
+"ieadvpack.dll": {
+"name": "Ieadvpack.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Run local or remote script(let) code through INF file specification.",
+"Run local or remote script(let) code through INF file specification.",
+"Load a DLL payload."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"ieframe.dll": {
+"name": "Ieframe.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Load an executable payload by calling a .url file with or without quotes. The .url file extension can be renamed."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"mshtml.dll": {
+"name": "Mshtml.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Launch an HTA application."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"pcwutl.dll": {
+"name": "Pcwutl.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Launch an executable."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"photoviewer.dll": {
+"name": "PhotoViewer.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download file from remote location."
+],
+"mitre": [
+"T1105"
+]
+},
+"scrobj.dll": {
+"name": "Scrobj.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download file from remote location."
+],
+"mitre": [
+"T1105"
+]
+},
+"setupapi.dll": {
+"name": "Setupapi.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Run local or remote script(let) code through INF file specification.",
+"Load an executable payload."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"shdocvw.dll": {
+"name": "Shdocvw.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Load an executable payload by calling a .url file with or without quotes. The .url file extension can be renamed."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"shell32.dll": {
+"name": "Shell32.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Load a DLL payload.",
+"Run an executable payload.",
+"Run an executable payload."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"shimgvw.dll": {
+"name": "Shimgvw.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download file from remote location."
+],
+"mitre": [
+"T1105"
+]
+},
+"syssetup.dll": {
+"name": "Syssetup.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Run local or remote script(let) code through INF file specification (Note May pop an error window).",
+"Load an executable payload."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"url.dll": {
+"name": "Url.dll",
+"os": "windows",
+"tokens": [
+"/test"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Invoke an HTML Application via mshta.exe (Default Handler).",
+"Load an executable payload by calling a .url file.",
+"Load an executable payload by specifying the file protocol handler (obfuscated)."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"zipfldr.dll": {
+"name": "Zipfldr.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Launch an executable.",
+"Launch an executable."
+],
+"mitre": [
+"T1218.011"
+]
+},
+"comsvcs.dll": {
+"name": "Comsvcs.dll",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Dump"
+],
+"usecases": [
+"Dump Lsass.exe process memory to retrieve credentials."
+],
+"mitre": [
+"T1003.001"
+]
+},
+"acccheckconsole.exe": {
+"name": "AccCheckConsole.exe",
+"os": "windows",
+"tokens": [
+"-window"
+],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Local execution of managed code from assembly DLL.",
+"Local execution of managed code to bypass AppLocker."
+],
+"mitre": [
+"T1218"
+]
+},
+"adplus.exe": {
+"name": "adplus.exe",
+"os": "windows",
+"tokens": [
+"-crash",
+"-hang",
+"-quiet"
+],
+"categories": [
+"Dump",
+"Execute"
+],
+"usecases": [
+"Create memory dump and parse it offline",
+"Run commands under a trusted Microsoft signed binary",
+"Run commands under a trusted Microsoft signed binary"
+],
+"mitre": [
+"T1003.001",
+"T1127"
+]
+},
+"agentexecutor.exe": {
+"name": "AgentExecutor.exe",
+"os": "windows",
+"tokens": [
+"-powershell"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute unsigned powershell scripts",
+"Execute a provided EXE"
+],
+"mitre": [
+"T1218"
+]
+},
+"applauncher.exe": {
+"name": "AppLauncher.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes an executable under a trusted, Microsoft signed binary."
+],
+"mitre": [
+"T1127"
+]
+},
+"appcert.exe": {
+"name": "AppCert.exe",
+"os": "windows",
+"tokens": [
+"-apptype",
+"-reportoutputpath",
+"-setupcommandline",
+"-setuppath"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Performs execution of specified file, can be used as a defense evasion",
+"Execute custom made MSI file with malicious code"
+],
+"mitre": [
+"T1127",
+"T1218.007"
+]
+},
+"appvlp.exe": {
+"name": "Appvlp.exe",
+"os": "windows",
+"tokens": [
+"-comobject",
+"-object"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execution of BAT file hosted on Webdav server.",
+"Local execution of process bypassing Attack Surface Reduction (ASR)."
+],
+"mitre": [
+"T1218"
+]
+},
+"bcp.exe": {
+"name": "Bcp.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Extract malicious executable from database storage to local file system for execution."
+],
+"mitre": [
+"T1105"
+]
+},
+"bginfo.exe": {
+"name": "Bginfo.exe",
+"os": "windows",
+"tokens": [
+"/nolicprompt",
+"/popup"
+],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Local execution of VBScript",
+"Local execution of VBScript",
+"Remote execution of VBScript"
+],
+"mitre": [
+"T1218"
+]
+},
+"cdb.exe": {
+"name": "Cdb.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Local execution of assembly shellcode.",
+"Run a shell command under a trusted Microsoft signed binary",
+"Run commands under a trusted Microsoft signed binary"
+],
+"mitre": [
+"T1127"
+]
+},
+"coregen.exe": {
+"name": "coregen.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Execute DLL code",
+"Execute DLL code",
+"Execute DLL code"
+],
+"mitre": [
+"T1055",
+"T1218"
+]
+},
+"createdump.exe": {
+"name": "Createdump.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Dump"
+],
+"usecases": [
+"Dump process memory contents using PID."
+],
+"mitre": [
+"T1003"
+]
+},
+"csi.exe": {
+"name": "csi.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Local execution of unsigned C# code."
+],
+"mitre": [
+"T1127"
+]
+},
+"defaultpack.exe": {
+"name": "DefaultPack.EXE",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Can be used to execute stagers, binaries, and other malicious commands."
+],
+"mitre": [
+"T1218"
+]
+},
+"devinit.exe": {
+"name": "Devinit.exe",
+"os": "windows",
+"tokens": [
+"-install"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes code from a (remote) MSI file."
+],
+"mitre": [
+"T1218.007"
+]
+},
+"devtoolslauncher.exe": {
+"name": "Devtoolslauncher.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute any binary with given arguments and it will call `developertoolssvc.exe`. `developertoolssvc` is actually executing the binary.",
+"Execute any binary with given arguments."
+],
+"mitre": [
+"T1127"
+]
+},
+"dnx.exe": {
+"name": "dnx.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Local execution of C# project stored in consoleapp folder."
+],
+"mitre": [
+"T1127"
+]
+},
+"dotnet.exe": {
+"name": "Dotnet.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Execute code bypassing AWL",
+"Execute DLL",
+"Execute arbitrary F# code"
+],
+"mitre": [
+"T1059",
+"T1218"
+]
+},
+"dsdbutil.exe": {
+"name": "dsdbutil.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Dump"
+],
+"usecases": [
+"Snapshoting of Active Directory NTDS.dit database",
+"Mounting the snapshot to access the ntds.dit with `copy c:\\<Snap Volume>\\windows\\ntds\\ntds.dit c:\\users\\administrator\\desktop\\ntds.dit.bak`",
+"Deletes the snapshot"
+],
+"mitre": [
+"T1003.003"
+]
+},
+"dtutil.exe": {
+"name": "dtutil.exe",
+"os": "windows",
+"tokens": [
+"/copy",
+"/file"
+],
+"categories": [
+"Copy"
+],
+"usecases": [
+"Use to copies the source file to the destination file"
+],
+"mitre": [
+"T1105"
+]
+},
+"dump64.exe": {
+"name": "Dump64.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Dump"
+],
+"usecases": [
+"Create memory dump and parse it offline to retrieve credentials."
+],
+"mitre": [
+"T1003.001"
+]
+},
+"dumpminitool.exe": {
+"name": "DumpMinitool.exe",
+"os": "windows",
+"tokens": [
+"-dumptype",
+"-file",
+"-processid"
+],
+"categories": [
+"Dump"
+],
+"usecases": [
+"Create memory dump and parse it offline"
+],
+"mitre": [
+"T1003.001"
+]
+},
+"dxcap.exe": {
+"name": "Dxcap.exe",
+"os": "windows",
+"tokens": [
+"-usage"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Local execution of a process as a subprocess of dxcap.exe",
+"Execute an arbitrary executable via trusted system executable."
+],
+"mitre": [
+"T1127"
+]
+},
+"ecmangen.exe": {
+"name": "ECMangen.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache"
+],
+"mitre": [
+"T1105"
+]
+},
+"excel.exe": {
+"name": "Excel.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache."
+],
+"mitre": [
+"T1105"
+]
+},
+"fsi.exe": {
+"name": "Fsi.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass"
+],
+"usecases": [
+"Execute payload with Microsoft signed binary to bypass WDAC policies",
+"Execute payload with Microsoft signed binary to bypass WDAC policies"
+],
+"mitre": [
+"T1059"
+]
+},
+"fsianycpu.exe": {
+"name": "FsiAnyCpu.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass"
+],
+"usecases": [
+"Execute payload with Microsoft signed binary to bypass WDAC policies",
+"Execute payload with Microsoft signed binary to bypass WDAC policies"
+],
+"mitre": [
+"T1059"
+]
+},
+"intellitrace.exe": {
+"name": "IntelliTrace.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes an executable under a trusted microsoft signed binary."
+],
+"mitre": [
+"T1127"
+]
+},
+"logger.exe": {
+"name": "Logger.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes an abitrary command via a signed binary to evade detection.",
+"Executes an abitrary command via a signed binary to evade detection.",
+"Executes an abitrary command via a signed binary to evade detection."
+],
+"mitre": [
+"T1202"
+]
+},
+"mftrace.exe": {
+"name": "Mftrace.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Local execution of cmd.exe as a subprocess of Mftrace.exe."
+],
+"mitre": [
+"T1127"
+]
+},
+"microsoft.nodejstools.pressanykey.exe": {
+"name": "Microsoft.NodejsTools.PressAnyKey.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Spawn a new process via Microsoft.NodejsTools.PressAnyKey.exe."
+],
+"mitre": [
+"T1127"
+]
+},
+"mpiexec.exe": {
+"name": "Mpiexec.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes commands under a trusted, Microsoft signed binary."
+],
+"mitre": [
+"T1127"
+]
+},
+"msaccess.exe": {
+"name": "MSAccess.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload (if it has the filename extension .mdb) and place it in INetCache."
+],
+"mitre": [
+"T1105"
+]
+},
+"mscopilot.exe": {
+"name": "Mscopilot.exe",
+"os": "windows",
+"tokens": [
+"-disable",
+"-launcher",
+"-sandbox",
+"-startup",
+"-window"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes a process under a trusted Microsoft signed binary"
+],
+"mitre": [
+"T1218.015"
+]
+},
+"mscopilot_proxy.exe": {
+"name": "Mscopilot_proxy.exe",
+"os": "windows",
+"tokens": [
+"-disable",
+"-launcher",
+"-sandbox",
+"-startup",
+"-window"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes a process under a trusted Microsoft signed binary"
+],
+"mitre": [
+"T1218.015"
+]
+},
+"msdeploy.exe": {
+"name": "Msdeploy.exe",
+"os": "windows",
+"tokens": [
+"-dest",
+"-source",
+"-verb"
+],
+"categories": [
+"AWL Bypass",
+"Copy",
+"Execute"
+],
+"usecases": [
+"Local execution of batch file using msdeploy.exe.",
+"Local execution of batch file using msdeploy.exe.",
+"Copy file."
+],
+"mitre": [
+"T1105",
+"T1218"
+]
+},
+"msohtmed.exe": {
+"name": "MsoHtmEd.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache."
+],
+"mitre": [
+"T1105"
+]
+},
+"mspub.exe": {
+"name": "Mspub.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache."
+],
+"mitre": [
+"T1105"
+]
+},
+"msxsl.exe": {
+"name": "msxsl.exe",
+"os": "windows",
+"tokens": [
+"-name"
+],
+"categories": [
+"ADS",
+"AWL Bypass",
+"Download",
+"Execute"
+],
+"usecases": [
+"Local execution of script stored in XSL file.",
+"Local execution of script stored in XSL file.",
+"Local execution of remote script stored in XSL script stored as an XML file."
+],
+"mitre": [
+"T1105",
+"T1220",
+"T1564"
+]
+},
+"nmcap.exe": {
+"name": "Nmcap.exe",
+"os": "windows",
+"tokens": [
+"/capture",
+"/file",
+"/network"
+],
+"categories": [
+"Reconnaissance"
+],
+"usecases": [
+"Capture network traffic on windows to collect sensitive data."
+],
+"mitre": [
+"T1040"
+]
+},
+"ntdsutil.exe": {
+"name": "ntdsutil.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Dump"
+],
+"usecases": [
+"Dumping of Active Directory NTDS.dit database"
+],
+"mitre": [
+"T1003.003"
+]
+},
+"ntsd.exe": {
+"name": "Ntsd.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes an executable under a trusted microsoft signed binary."
+],
+"mitre": [
+"T1127"
+]
+},
+"openconsole.exe": {
+"name": "OpenConsole.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Use OpenConsole.exe as a proxy binary to evade defensive counter-measures"
+],
+"mitre": [
+"T1202"
+]
+},
+"pixtool.exe": {
+"name": "Pixtool.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes an executable under a trusted, Microsoft signed binary."
+],
+"mitre": [
+"T1127"
+]
+},
+"powerpnt.exe": {
+"name": "Powerpnt.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache."
+],
+"mitre": [
+"T1105"
+]
+},
+"procdump.exe": {
+"name": "Procdump.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Performs execution of unsigned DLL.",
+"Performs execution of unsigned DLL."
+],
+"mitre": [
+"T1202"
+]
+},
+"protocolhandler.exe": {
+"name": "ProtocolHandler.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will open the specified URL in the default web browser, which (if the URL points to a file) will often result in the file being downloaded to the user's Downloads folder (without user interaction)"
+],
+"mitre": [
+"T1105"
+]
+},
+"rcsi.exe": {
+"name": "rcsi.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Local execution of arbitrary C# code stored in local CSX file.",
+"Local execution of arbitrary C# code stored in local CSX file."
+],
+"mitre": [
+"T1127"
+]
+},
+"remote.exe": {
+"name": "Remote.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Executes a process under a trusted Microsoft signed binary",
+"Executes a process under a trusted Microsoft signed binary",
+"Executing a remote binary without saving file to disk"
+],
+"mitre": [
+"T1127"
+]
+},
+"sqldumper.exe": {
+"name": "Sqldumper.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Dump"
+],
+"usecases": [
+"Dump process using PID.",
+"Dump LSASS.exe to Mimikatz compatible dump using PID."
+],
+"mitre": [
+"T1003",
+"T1003.001"
+]
+},
+"sqlps.exe": {
+"name": "Sqlps.exe",
+"os": "windows",
+"tokens": [
+"-noprofile"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute PowerShell commands without ScriptBlock logging."
+],
+"mitre": [
+"T1218"
+]
+},
+"sqltoolsps.exe": {
+"name": "SQLToolsPS.exe",
+"os": "windows",
+"tokens": [
+"-command",
+"-noprofile",
+"-process"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute PowerShell command."
+],
+"mitre": [
+"T1218"
+]
+},
+"squirrel.exe": {
+"name": "Squirrel.exe",
+"os": "windows",
+"tokens": [
+"-download",
+"-update",
+"-updaterollback"
+],
+"categories": [
+"AWL Bypass",
+"Download",
+"Execute"
+],
+"usecases": [
+"Download binary",
+"Download and execute binary",
+"Download and execute binary"
+],
+"mitre": [
+"T1218"
+]
+},
+"te.exe": {
+"name": "te.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute Visual Basic script stored in local Windows Script Component file.",
+"Execute DLL file."
+],
+"mitre": [
+"T1127"
+]
+},
+"teams.exe": {
+"name": "Teams.exe",
+"os": "windows",
+"tokens": [
+"-disable",
+"-launcher",
+"-sandbox"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute JavaScript code",
+"Execute JavaScript code",
+"Executes a process under a trusted Microsoft signed binary"
+],
+"mitre": [
+"T1218.015"
+]
+},
+"testwindowremoteagent.exe": {
+"name": "TestWindowRemoteAgent.exe",
+"os": "windows",
+"tokens": [
+"-base64",
+"-data"
+],
+"categories": [
+"Upload"
+],
+"usecases": [
+"Attackers may utilize this to exfiltrate data over DNS"
+],
+"mitre": [
+"T1048"
+]
+},
+"tracker.exe": {
+"name": "Tracker.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Injection of locally stored DLL file into target process.",
+"Injection of locally stored DLL file into target process."
+],
+"mitre": [
+"T1127"
+]
+},
+"update.exe": {
+"name": "Update.exe",
+"os": "windows",
+"tokens": [
+"-args",
+"-createshortcut",
+"-download",
+"-process",
+"-processstart",
+"-removeshortcut",
+"-start",
+"-update",
+"-updaterollback"
+],
+"categories": [
+"AWL Bypass",
+"Download",
+"Execute"
+],
+"usecases": [
+"Download binary",
+"Download and execute binary",
+"Download and execute binary"
+],
+"mitre": [
+"T1070",
+"T1218",
+"T1547"
+]
+},
+"vsdiagnostics.exe": {
+"name": "VSDiagnostics.exe",
+"os": "windows",
+"tokens": [
+"/launch",
+"/launchargs"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution of binary",
+"Proxy execution of binary with arguments"
+],
+"mitre": [
+"T1127"
+]
+},
+"vsiisexelauncher.exe": {
+"name": "VSIISExeLauncher.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute any binary with given arguments."
+],
+"mitre": [
+"T1218"
+]
+},
+"visio.exe": {
+"name": "Visio.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache."
+],
+"mitre": [
+"T1105"
+]
+},
+"visualuiaverifynative.exe": {
+"name": "VisualUiaVerifyNative.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass"
+],
+"usecases": [
+"Execute proxied payload with Microsoft signed binary to bypass WDAC policies"
+],
+"mitre": [
+"T1218"
+]
+},
+"vslaunchbrowser.exe": {
+"name": "VSLaunchBrowser.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"It will download a remote file to INetCache and open it using the default app associated with the supplied file extension with VSLaunchBrowser as parent process.",
+"It will open a local file using the default app associated with the supplied file extension with VSLaunchBrowser as parent process.",
+"It will open a remote file using the default app associated with the supplied file extension with VSLaunchBrowser as parent process."
+],
+"mitre": [
+"T1105",
+"T1127"
+]
+},
+"vshadow.exe": {
+"name": "Vshadow.exe",
+"os": "windows",
+"tokens": [
+"-exec"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Performs execution of specified executable file."
+],
+"mitre": [
+"T1202"
+]
+},
+"vsjitdebugger.exe": {
+"name": "vsjitdebugger.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execution of local PE file as a subprocess of Vsjitdebugger.exe."
+],
+"mitre": [
+"T1127"
+]
+},
+"wfmformat.exe": {
+"name": "WFMFormat.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution of binary"
+],
+"mitre": [
+"T1127"
+]
+},
+"wfc.exe": {
+"name": "Wfc.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass"
+],
+"usecases": [
+"Execute proxied payload with Microsoft signed binary to bypass WDAC policies"
+],
+"mitre": [
+"T1127"
+]
+},
+"windbg.exe": {
+"name": "WinDbg.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes an executable under a trusted microsoft signed binary."
+],
+"mitre": [
+"T1127"
+]
+},
+"winproj.exe": {
+"name": "WinProj.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache."
+],
+"mitre": [
+"T1105"
+]
+},
+"winword.exe": {
+"name": "Winword.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache."
+],
+"mitre": [
+"T1105"
+]
+},
+"wsl.exe": {
+"name": "Wsl.exe",
+"os": "windows",
+"tokens": [
+"-exec",
+"/calc",
+"/shadow",
+"/system32",
+"/windows"
+],
+"categories": [
+"Download",
+"Execute"
+],
+"usecases": [
+"Performs execution of specified file, can be used to execute arbitrary Linux commands.",
+"Performs execution of arbitrary Linux commands as root without need for password.",
+"Performs execution of arbitrary Linux commands."
+],
+"mitre": [
+"T1105",
+"T1202",
+"T1218"
+]
+},
+"xbootmgr.exe": {
+"name": "XBootMgr.exe",
+"os": "windows",
+"tokens": [
+"-callback",
+"-pretracecmd",
+"-trace"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Executes code as part of post-trace automation flow.",
+"Executes code as part of pre-trace automation or staging."
+],
+"mitre": [
+"T1202"
+]
+},
+"xbootmgrsleep.exe": {
+"name": "XBootMgrSleep.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Performs execution of specified executable, can be used as a defense evasion"
+],
+"mitre": [
+"T1202"
+]
+},
+"devtunnel.exe": {
+"name": "devtunnel.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"Download Files, Upload Files, Data Exfiltration"
+],
+"mitre": [
+"T1105"
+]
+},
+"vsls-agent.exe": {
+"name": "vsls-agent.exe",
+"os": "windows",
+"tokens": [
+"-agent",
+"-agentextensionpath"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute proxied payload with Microsoft signed binary"
+],
+"mitre": [
+"T1218"
+]
+},
+"vstest.console.exe": {
+"name": "vstest.console.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"AWL Bypass"
+],
+"usecases": [
+"Proxy Execution and AWL bypass, Adversaries may run malicious code embedded inside the test methods of crafted dll/exe"
+],
+"mitre": [
+"T1127"
+]
+},
+"winfile.exe": {
+"name": "winfile.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Performs execution of specified file, can be used as a defense evasion"
+],
+"mitre": [
+"T1202"
+]
+},
+"xsd.exe": {
+"name": "xsd.exe",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Download"
+],
+"usecases": [
+"It will download a remote payload and place it in INetCache"
+],
+"mitre": [
+"T1105"
+]
+},
+"cl_loadassembly.ps1": {
+"name": "CL_LoadAssembly.ps1",
+"os": "windows",
+"tokens": [
+"-command",
+"-location",
+"-module",
+"-path"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute proxied payload with Microsoft signed binary"
+],
+"mitre": [
+"T1216"
+]
+},
+"cl_mutexverifiers.ps1": {
+"name": "CL_Mutexverifiers.ps1",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution"
+],
+"mitre": [
+"T1216"
+]
+},
+"cl_invocation.ps1": {
+"name": "CL_Invocation.ps1",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution"
+],
+"mitre": [
+"T1216"
+]
+},
+"launch-vsdevshell.ps1": {
+"name": "Launch-VsDevShell.ps1",
+"os": "windows",
+"tokens": [
+"-vsdevshell",
+"-vsinstallationpath",
+"-vswherepath"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution",
+"Proxy execution"
+],
+"mitre": [
+"T1216"
+]
+},
+"manage-bde.wsf": {
+"name": "Manage-bde.wsf",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution from script",
+"Proxy execution from script"
+],
+"mitre": [
+"T1216"
+]
+},
+"pubprn.vbs": {
+"name": "Pubprn.vbs",
+"os": "windows",
+"tokens": [],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution"
+],
+"mitre": [
+"T1216.001"
+]
+},
+"syncappvpublishingserver.vbs": {
+"name": "Syncappvpublishingserver.vbs",
+"os": "windows",
+"tokens": [
+"-object"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Use Powershell host invoked from vbs script"
+],
+"mitre": [
+"T1216.002"
+]
+},
+"utilityfunctions.ps1": {
+"name": "UtilityFunctions.ps1",
+"os": "windows",
+"tokens": [
+"-command",
+"-location",
+"-module",
+"-path"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Execute proxied payload with Microsoft signed binary"
+],
+"mitre": [
+"T1216"
+]
+},
+"winrm.vbs": {
+"name": "winrm.vbs",
+"os": "windows",
+"tokens": [
+"-format",
+"/acmedc",
+"/nologo",
+"/target",
+"/win32"
+],
+"categories": [
+"AWL Bypass",
+"Execute"
+],
+"usecases": [
+"Proxy execution",
+"Proxy execution",
+"Execute arbitrary, unsigned code via XSL script"
+],
+"mitre": [
+"T1216",
+"T1220"
+]
+},
+"pester.bat": {
+"name": "Pester.bat",
+"os": "windows",
+"tokens": [
+"/help"
+],
+"categories": [
+"Execute"
+],
+"usecases": [
+"Proxy execution",
+"Proxy execution"
+],
+"mitre": [
+"T1216"
+]
+}
+}

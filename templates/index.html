@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENTINEL — Blue Team Triage Console</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body class="scanlines">
+  <div class="grid-bg"></div>
+
+  <!-- ───────────────────────── Header ───────────────────────── -->
+  <header class="header">
+    <div class="brand">
+      <div class="brand-mark">◣◢</div>
+      <div>
+        <h1 class="brand-title">SENTINEL</h1>
+        <p class="brand-sub">BLUE TEAM // PROCESS THREAT TRIAGE</p>
+      </div>
+    </div>
+
+    <div class="intel-badge intel-{{ intel.status }}">
+      <span class="pulse-dot"></span>
+      <div class="intel-text">
+        <span class="intel-status">
+          {% if intel.status == 'live' %}LIVE INTEL FEED
+          {% elif intel.status == 'cached' %}CACHED INTEL
+          {% elif intel.status == 'fallback' %}BUNDLED FALLBACK
+          {% else %}DEGRADED FEED{% endif %}
+        </span>
+        <span class="intel-counts">
+          LOLBAS {{ intel.counts.lolbins }} · GTFOBins {{ intel.counts.gtfobins }}
+          · Sigma {{ intel.counts.sigma_rules }} · MITRE {{ intel.counts.mitre_keywords }}
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- ──────────────────── Upload / Drop zone ──────────────────── -->
+    <section id="upload-section">
+      <div id="dropzone" class="dropzone">
+        <input type="file" id="file-input" accept=".csv,text/csv" hidden />
+        <div class="dz-icon">⇪</div>
+        <h2 class="dz-title">DROP PROCESS LOG</h2>
+        <p class="dz-sub">Drag &amp; drop a <code>.csv</code> of process activity, or
+          <span class="dz-browse">browse</span></p>
+        <p class="dz-hint">columns: <code>process_name</code>, <code>command_line</code>
+          &nbsp;·&nbsp; scoring runs 100% locally · zero network latency</p>
+      </div>
+    </section>
+
+    <!-- ──────────────────────── Results ──────────────────────── -->
+    <section id="results-section" class="hidden">
+      <!-- stat strip -->
+      <div class="stat-strip">
+        <div class="stat"><span class="stat-val" id="stat-rows">—</span><span class="stat-key">ROWS SCANNED</span></div>
+        <div class="stat"><span class="stat-val danger" id="stat-flagged">20</span><span class="stat-key">THREATS SURFACED</span></div>
+        <div class="stat"><span class="stat-val accent" id="stat-engine">—</span><span class="stat-key">ENGINE SCAN</span></div>
+        <div class="stat"><span class="stat-val" id="stat-ai">—</span><span class="stat-key" id="stat-ai-key">AI JUDGE</span></div>
+      </div>
+
+      <!-- pipeline / AI status banner -->
+      <div id="ai-banner" class="ai-banner"></div>
+
+      <!-- top 20 table -->
+      <div class="panel">
+        <div class="panel-head">
+          <h3>TOP 20 MOST DANGEROUS COMMANDS</h3>
+          <span class="panel-note">rule engine → AI judge · ranked 1 = most dangerous · click a row for details</span>
+        </div>
+        <div id="threat-list" class="threat-list"></div>
+      </div>
+
+      <button id="reset-btn" class="reset-btn">⟲ SCAN ANOTHER LOG</button>
+    </section>
+
+    <div id="error-box" class="error-box hidden"></div>
+  </main>
+
+  <footer class="footer">
+    SENTINEL · local scoring engine · LOLBAS + GTFOBins + SigmaHQ + MITRE ATT&amp;CK
+  </footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,1624 @@
+{
+"r": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"aa-exec": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"acr": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"agetty": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ansible-playbook": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ansible-test": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"aoss": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"apt-get": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"arch-nspawn": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"aria2c": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"ash": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"asterisk": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"at": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"autoconf": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"autoheader": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"autoreconf": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"bash": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"bconsole": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"borg": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"bpftrace": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"bundle": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"busctl": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"busybox": {
+"os": "linux",
+"funcs": [
+"reverse-shell"
+]
+},
+"cabal": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"capsh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"cdist": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"certbot": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"check_by_ssh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"check_ssl_cert": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"choom": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"chroot": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"chrt": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"clisp": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"cmake": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"cobc": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"code": {
+"os": "linux",
+"funcs": [
+"reverse-shell"
+]
+},
+"codex": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"composer": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"cpio": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"cpulimit": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"crash": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"crontab": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"csh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"csvtool": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ctr": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"dash": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"dc": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"debugfs": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"dhclient": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"distcc": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"dmsetup": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"dnf": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"dnsmasq": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"doas": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"docker": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"dotnet": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"dpkg": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"dvips": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"easyrsa": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ed": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"elvish": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"emacs": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"enscript": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"env": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ex": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"expect": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"fail2ban-client": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"fastfetch": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"find": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"firejail": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"fish": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"flock": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"forge": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ftp": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"fzf": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"gawk": {
+"os": "linux",
+"funcs": [
+"bind-shell",
+"reverse-shell",
+"shell"
+]
+},
+"gcc": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"gdb": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"gem": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"genie": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ghc": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ghci": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ginsh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"git": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"gnuplot": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"go": {
+"os": "linux",
+"funcs": [
+"bind-shell",
+"reverse-shell",
+"shell"
+]
+},
+"grc": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"gtester": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"guile": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"hg": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"hping3": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"iftop": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ionice": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ip": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ispell": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"java": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"jjs": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"joe": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"jrunscript": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"jshell": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"jtag": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"julia": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"ksu": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"kubectl": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"latex": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"latexmk": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ld.so": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"less": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"lftp": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"loginctl": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"logrotate": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"logsave": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ltrace": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"lua": {
+"os": "linux",
+"funcs": [
+"bind-shell",
+"reverse-shell",
+"shell"
+]
+},
+"lxd": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"m4": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"mail": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"make": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"man": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"mawk": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"minicom": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"more": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"mosh-server": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"msgfilter": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"multitime": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"mysql": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"nano": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"nc": {
+"os": "linux",
+"funcs": [
+"bind-shell",
+"reverse-shell"
+]
+},
+"ncdu": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ncftp": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"neofetch": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"nice": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"nmap": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"node": {
+"os": "linux",
+"funcs": [
+"bind-shell",
+"reverse-shell",
+"shell"
+]
+},
+"nohup": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"npm": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"nroff": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"nsenter": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"octave": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"opencode": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"openssl": {
+"os": "linux",
+"funcs": [
+"reverse-shell"
+]
+},
+"openvpn": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"openvt": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"opkg": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"pdflatex": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"pdftex": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"perf": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"perl": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"perlbug": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"pexec": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"pg": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"php": {
+"os": "linux",
+"funcs": [
+"command",
+"reverse-shell",
+"shell"
+]
+},
+"pic": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"pidstat": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"pip": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"pkexec": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"pkg": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"plymouth": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"podman": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"posh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"procmail": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"psftp": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"psql": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"puppet": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"pwsh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"python": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"ranger": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"rc": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"restic": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"rlwrap": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"rpm": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"rpmdb": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"rpmquery": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"rpmverify": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"rsync": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"rsyslogd": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"rtorrent": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ruby": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"run-parts": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"runscript": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"rustup": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"sash": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"scanmem": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"scp": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"screen": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"script": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"scrot": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"sed": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"service": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"setarch": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"setlock": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"sftp": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"sg": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"slsh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"smbclient": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"snap": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"socat": {
+"os": "linux",
+"funcs": [
+"bind-shell",
+"reverse-shell",
+"shell"
+]
+},
+"socket": {
+"os": "linux",
+"funcs": [
+"bind-shell",
+"reverse-shell"
+]
+},
+"softlimit": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"split": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"sqlite3": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ssh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ssh-agent": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"sshfs": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"sshpass": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"sshuttle": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"start-stop-daemon": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"stdbuf": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"strace": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"su": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"sudo": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"sysctl": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"systemctl": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"systemd-run": {
+"os": "linux",
+"funcs": [
+"command",
+"shell"
+]
+},
+"tar": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"task": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"taskset": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"tasksh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"tclsh": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"tcpdump": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"tcsh": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"tdbtool": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"telnet": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"tex": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"time": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"timeout": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"tmate": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"tmux": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"top": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"torify": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"torsocks": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"unshare": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"uv": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"valgrind": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"vi": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"virsh": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"watch": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"wg-quick": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"wget": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"xargs": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"xdg-user-dir": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"xdotool": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"yarn": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"yash": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"yt-dlp": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"yum": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"zathura": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"zic": {
+"os": "linux",
+"funcs": [
+"command"
+]
+},
+"zip": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"zsh": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"zypper": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"apt": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"awk": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"bundler": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"c89": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"c99": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"cc": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"g++": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"ksh": {
+"os": "linux",
+"funcs": [
+"reverse-shell",
+"shell"
+]
+},
+"nawk": {
+"os": "linux",
+"funcs": [
+"bind-shell",
+"reverse-shell",
+"shell"
+]
+},
+"pico": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"red": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"xelatex": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+},
+"xetex": {
+"os": "linux",
+"funcs": [
+"shell"
+]
+}
+}

